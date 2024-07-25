@@ -1,113 +1,125 @@
 import Image from "next/image";
+import {
+  garamond,
+  inter,
+  poppins,
+  serifDisplay,
+  title,
+  vt323,
+} from "./fonts/fonts";
+import Link from "next/link";
+import { fetchNavbarlinks, fetchAbout } from "./lib/fetchData";
+import { IconCarousel } from "./ui/iconCarousel";
+import { HoverGradient, HoverGradient2 } from "./components/hoverGradient";
 
-export default function Home() {
+const Home: React.FC = async () => {
+  const navlinks = await fetchNavbarlinks();
+  const aboutDetails = await fetchAbout();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="flex min-h-screen w-full md:flex-row flex-col md:justify-between bg-light transition-all duration-500">
+      {/* Left column */}
+      {/* Title card with name */}
+      <div className="md:w-1/2 w-full md:h-screen transition-all duration-500">
+        <div className="w-full md:h-1/3 h-1/6 pl-2 pt-2 md:pr-1 pr-2 pb-1 transition-all duration-500">
+          <div
+            className={`w-full h-full border border-dark ${inter.className} font-extrabold flex`}
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <div className="md:w-0 md:border-r-0 border-r border-dark w-11 transition-all duration-500" />
+            <div className="flex flex-col w-full h-full justify-end items-start md:px-4 px-1 transition-all duration-500">
+              <h1 className="md:text-lg sm:text-sm text-xs transition-all duration-500">
+                Hello, my name is
+              </h1>
+              <h1 className="lg:text-8xl md:text-6xl sm:text-5xl text-4xl transition-all duration-500">
+                Jacob
+              </h1>
+              <h1 className="lg:text-8xl md:text-6xl sm:text-5xl text-4xl transition-all duration-500">
+                Smith.
+              </h1>
+            </div>
+          </div>
+        </div>
+        {/* About section */}
+        <div
+          className={`w-full md:h-2/3 h-1/3 overflow-clip pl-2 pb-2 md:pr-1 pr-2 pt-1 ${inter.className}`}
+        >
+          <div className="w-full h-full border border-dark relative justify-between flex flex-col">
+            <div className="absolute w-full">
+              <div className="w-full md:h-20 h-12 bg-dark text-center flex items-center justify-center overflow-clip group">
+                <h1 className="md:text-4xl text-2xl font-bold italic text-light absolute z-20">
+                  About
+                </h1>
+              </div>
+            </div>
+            <div className="h-1/2 justify-between flex flex-col">
+              <p className="font-medium md:text-lg text-sm px-5 my-3 text-balance md:pt-20 pt-12 transition-all">
+                {aboutDetails.content}
+              </p>
+              <div>
+                <h2 className="md:text-4xl text-2xl font-bold pb-4 text-center transition-all">
+                  Skills
+                </h2>
+                <div className="md:h-20 h-14 w-full border-t md:border-b border-dark md:pt-2 pt-2">
+                  <IconCarousel />
+                </div>
+              </div>
+            </div>
+            <p></p>
+          </div>
         </div>
       </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* Right column */}
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="md:w-1/2 w-full md:h-screen h-96">
+        <div className="w-full md:h-2/3 h-full md:pl-1 pl-2 pb-1 pr-2 md:pt-2">
+          <div className="w-full h-full border border-dark relative justify-between flex flex-col">
+            <div className="absolute w-full h-full">
+              <div className="w-full md:h-20 h-12 bg-dark text-center flex items-center justify-center overflow-clip group absolute">
+                <h1 className="md:text-4xl text-2xl transition-all font-bold italic text-light absolute z-20">
+                  Navigation
+                </h1>
+              </div>
+              <div className="h-full w-full flex flex-col my-auto justify-center items-center md:pt-20 pt-12">
+                {navlinks.map((link, index) => (
+                  <Link
+                    href={link.href}
+                    key={index}
+                    className={`w-full h-1/6 bg-light text-center flex items-center justify-center overflow-clip group border-t border-b border-dark my-2`}
+                  >
+                    <h1
+                      className={`${inter.className} font-bold italic md:text-4xl text-2xl absolute z-20`}
+                    >
+                      {link.title}
+                    </h1>
+                    <HoverGradient2 />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full md:h-1/3 h-56 md:pl-1 pl-2 pb-2 pr-2 pt-1">
+          <div
+            className={`w-full h-full border border-dark ${inter.className} flex flex-col`}
+          >
+            <div className="h-1/2 flex items-center justify-center">
+              <h1 className="md:text-5xl text-3xl font-bold pb-8">Contact.</h1>
+            </div>
+            <a
+              href="mailto:jwj.smith98@gmail.com"
+              className="overflow-clip flex text-center items-center md:h-16 h-12 justify-center border-t border-b border-dark group relative md:hover:bg-accent transition-all duration-300"
+            >
+              <h1
+                className={`md:text-4xl text-2xl ${title.className} bg-clip md:group-hover:scale-[103%] md:group-hover:text-light transition-all duration-300 absolute z-20 w-full overflow-clip`}
+              >
+                jwj.smith98@gmail.com
+              </h1>
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   );
-}
+};
+
+export default Home;

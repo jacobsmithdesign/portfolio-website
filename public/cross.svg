@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 64 64" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M64 0L64 0L64 64L0 64L0 0L64 0Z" id="path_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#path_1" clip-rule="evenodd" fill-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="Icon 64">
+    <path d="M64 0L64 0L64 64L0 64L0 0L64 0Z" id="Icon-64" fill="none" stroke="none" />
+    <path d="M0 0L64 64" id="Line" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="8" stroke-linecap="square" clip-path="url(#clip_1)" />
+    <path d="M64 0L0 64" id="Line" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="8" stroke-linecap="square" clip-path="url(#clip_1)" />
+  </g>
+</svg>
