@@ -28,7 +28,7 @@ function Modal({ children, isOpen, onClose }) {
           <Close />
         </button>
         <div
-          className={`transition-all duration-100 px-2 ${!closeAnimation ? "opacity-0" : "opacity-100"} overflow-y-scroll`}
+          className={`transition-all duration-100 px-2 ${!closeAnimation ? "opacity-0" : "opacity-100"} `}
         >
           {children}
         </div>
