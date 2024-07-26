@@ -34,6 +34,25 @@ export const WEBDEV_QUERY = `
     title
     content {value}
     image {url}
+    url
   }
 }
 `;
+
+export const BLOG_QUERY = `{
+  allBlogs {
+    title
+    content{value}
+    image {url}
+    date
+  }
+}`;
+
+export const GALLERY_QUERY = `
+{
+ allGalleries {
+  title
+  image {url}
+  content
+}
+}`;

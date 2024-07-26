@@ -47,10 +47,10 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
             className={`${showNavbarLinks ? "h-1/4" : "h-0"} duration-1000 ease-in-out`}
           >
             <div
-              className={`h-full transition-all duration-150 overflow-clip ${showNavbarLinks ? "border-t" : "border-t-0"} hover:bg-secondary text-dark flex ${index != 0 ? "border-secondary" : "border-dark"} bg-light`}
+              className={`h-full w-full transition-all duration-150 overflow-clip ${showNavbarLinks ? "border-t" : "border-t-0"} hover:bg-secondary text-dark flex ${index != 0 ? "border-secondary" : "border-dark"} bg-light relative items-end md:pb-8 pb-4`}
             >
               <h1
-                className={`rotate-[-90deg] text-center my-auto w-full transition-all duration-500 delay-200 ${showNavbarLinks ? "opacity-100" : "opacity-0"}`}
+                className={`rotate-[-90deg] absolute w-full my-auto transition-all duration-500 delay-200 ${showNavbarLinks ? "opacity-100" : "opacity-0"}`}
               >
                 {link.title}
               </h1>
