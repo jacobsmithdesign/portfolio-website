@@ -70,3 +70,16 @@ html {
     background-position: 0% 100%;
   }
 }
+
+/* Custom Renderers classes */
+.multi-column-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  column-gap: 20px;
+}
+
+.multi-column-list li {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}

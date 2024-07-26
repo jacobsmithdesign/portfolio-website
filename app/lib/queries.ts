@@ -56,3 +56,16 @@ export const GALLERY_QUERY = `
   content
 }
 }`;
+
+export const MUSIC_QUERY = `
+{
+allMusics {
+  title
+  image{url}
+  content {value}
+  tidal
+  spotify
+  apple
+  soundcloud
+}
+}`;

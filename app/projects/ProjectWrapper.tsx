@@ -9,6 +9,11 @@ import { StructuredText } from "react-datocms";
 import customRenderers from "./customRenderers";
 import Close from "../../public/cross.svg";
 import Modal from "./projectModal";
+import {
+  HoverGradient,
+  HoverGradient2,
+  HoverGradient3,
+} from "../components/hoverGradient";
 function WebDevelopment({ webdevProject }) {
   const [animateContent, setAnimateContent] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
@@ -219,7 +224,7 @@ function EnlargedProject({ projectDetails }) {
 
   return (
     <div>
-      <h2 className="md:text-4xl text-2xl font-bold mb-4">
+      <h2 className="md:text-4xl text-xl font-bold md:my-8 my-2 text-left md:mr-0 mr-8">
         {projectDetails.title}
       </h2>
       <Image
@@ -250,12 +255,13 @@ export function ProjectWrapper({ compSciProject, webdevProject }) {
   return (
     <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen">
       <div className="border border-dark h-full relative overflow-hidden">
-        <div className="w-full text-center bg-dark border-b border-dark">
+        <div className="w-full flex text-center border-b border-dark md:h-24 h-12 group overflow-clip">
           <h1
-            className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light`}
+            className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light absolute z-10`}
           >
             Projects.
           </h1>
+          <HoverGradient3 />
         </div>
         <div className="overflow-y-scroll h-full hide-scrollbar md:pb-24 pb-12">
           <WebDevelopment webdevProject={webdevProject} />

@@ -8,6 +8,7 @@ import { animate } from "framer-motion";
 import { StructuredText } from "react-datocms";
 import customRenderers from "./customRenderers";
 import Modal from "./galleryModal";
+import { HoverGradient3 } from "../components/hoverGradient";
 
 function GalleryComponent({ gallery, onGalleryClick }) {
   const [animateContent, setAnimateContent] = useState(false);
@@ -62,7 +63,7 @@ function GalleryComponent({ gallery, onGalleryClick }) {
               alt="background image for computer science gallery"
               width={400}
               height={400}
-              className="object-cover overflow-clip w-full h-full absolute opacity-80 md:group-hover:opacity-100 transition-all duration-700 ease-in-out md:group-hover:scale-105"
+              className="object-cover overflow-clip w-full h-full absolute opacity-70 md:group-hover:opacity-100 transition-all duration-700 ease-in-out md:group-hover:scale-105"
             />
           </button>
         ))}
@@ -75,7 +76,7 @@ function EnlargedGallery({ galleryDetails }) {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
-      <h2 className="md:text-4xl text-2xl font-bold mb-4 text-center">
+      <h2 className="md:text-4xl text-2xl font-bold md:my-8 my-2 text-center">
         {galleryDetails.title}
       </h2>
       <div className="w-full h-full flex justify-center items-center overflow-hidden ">
@@ -85,8 +86,8 @@ function EnlargedGallery({ galleryDetails }) {
           width={800}
           height={800}
           unoptimized
-          className="object-contain w-full max-h-full pt-4"
-          style={{ maxHeight: "calc(100vh - 100px)", maxWidth: "100%" }} // Ensure it fits within the viewport height and width
+          className="object-contain w-full max-h-full "
+          style={{ maxHeight: "calc(100vh - 128px)", maxWidth: "100%" }} // Ensure it fits within the viewport height and width
         />
       </div>
     </div>
@@ -104,16 +105,17 @@ export function GalleryWrapper({ gallery }) {
   };
 
   return (
-    <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen">
+    <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen transition-all duration-500">
       <div className="border border-dark h-full relative overflow-hidden">
-        <div className="w-full text-center bg-dark border-b border-dark">
+        <div className="w-full text-center border-b border-dark md:h-24 h-12 group overflow-clip transition-all duration-300">
           <h1
-            className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light`}
+            className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light absolute z-10 transition-all duration-500`}
           >
-            Art Gallery.
+            Gallery.
           </h1>
+          <HoverGradient3 />
         </div>
-        <div className="overflow-y-scroll h-full hide-scrollbar md:pb-24 pb-12">
+        <div className="overflow-y-scroll h-full hide-scrollbar md:pb-24 pb-12 transition-all duration-500">
           <GalleryComponent
             gallery={gallery}
             onGalleryClick={handleGalleryClick}

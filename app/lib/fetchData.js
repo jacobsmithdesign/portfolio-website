@@ -6,6 +6,7 @@ import {
   WEBDEV_QUERY,
   BLOG_QUERY,
   GALLERY_QUERY,
+  MUSIC_QUERY,
 } from "./queries";
 
 const endpoint = "https://graphql.datocms.com/";
@@ -50,4 +51,10 @@ export const fetchGallery = async () => {
   const query = GALLERY_QUERY;
   const data = await client.request(query);
   return data.allGalleries;
+};
+
+export const fetchMusic = async () => {
+  const query = MUSIC_QUERY;
+  const data = await client.request(query);
+  return data.allMusics;
 };
