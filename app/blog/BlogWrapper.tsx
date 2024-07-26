@@ -81,7 +81,7 @@ function EnlargedBlog({ blogDetails }) {
   if (!blogDetails) return null;
 
   return (
-    <div className="relative">
+    <div>
       <div>
         <h2 className="md:text-4xl text-xl font-bold md:my-8 my-2 text-left md:mr-0 mr-8">
           {blogDetails.title}
