@@ -83,3 +83,62 @@ html {
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
 }
+@keyframes waveAnimationLeft {
+  0% {
+    transform: translateX(0) translateY(35%);
+  }
+  50% {
+    transform: translateX(-25%) translateY(5%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(35%);
+  }
+}
+
+@keyframes waveAnimationRight {
+  0% {
+    transform: translateX(0) translateY(40%);
+  }
+  50% {
+    transform: translateX(25%) translateY(10%);
+  }
+  100% {
+    transform: translateX(50%) translateY(40%);
+  }
+}
+
+.wave-container {
+  position: absolute;
+  width: 200%; /* Ensure there's enough width for the animation to loop smoothly */
+  height: 100%;
+  display: flex;
+}
+
+.wave-container-left {
+  left: 0;
+}
+
+.wave-container-right {
+  right: 0;
+  transform: translateX(-50%);
+}
+.wave-container svg {
+  height: 100%;
+  width: 50%;
+}
+
+.slow-right {
+  animation: waveAnimationRight 12s linear infinite;
+}
+
+.medium-left {
+  animation: waveAnimationLeft 10s linear infinite;
+}
+
+.fast-right {
+  animation: waveAnimationRight 7s linear infinite;
+}
+
+.veryfast-left {
+  animation: waveAnimationLeft 9s linear infinite;
+}

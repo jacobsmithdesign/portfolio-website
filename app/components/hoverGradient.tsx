@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 
+const background = "dark";
+
 export function HoverGradient() {
   return (
     <div className="w-full flex flex-col relative h-full group-hover:opacity-100 opacity-0 transition-all duration-200 ">
@@ -15,7 +17,7 @@ export function HoverGradient() {
           className={`h-0 my-auto mx-auto bg-greenpastel w-full group-hover:h-[96%] transition-all duration-500 ease-out delay-100 bottom-0 absolute`}
         />
         <div
-          className={`h-0 my-auto mx-auto bg-gradient-to-t from-dark to-bluepastel w-full group-hover:h-[94%] transition-all duration-500 ease-out delay-150 bottom-0 absolute`}
+          className={`h-0 my-auto mx-auto bg-gradient-to-t from-${background} to-bluepastel w-full group-hover:h-[94%] transition-all duration-500 ease-out delay-150 bottom-0 absolute`}
         />
       </div>
     </div>
@@ -38,7 +40,7 @@ export function HoverGradient2() {
         className={`w-0 my-auto mx-auto bg-bluepastel h-full group-hover:w-full transition-all  duration-700 ease-in-out delay-150 left-0 absolute`}
       />
       <div
-        className={`w-0 my-auto mx-auto bg-gradient-to-r from-light to-bluepastel h-full group-hover:w-full transition-all  duration-700 ease-in-out delay-200 left-0 absolute `}
+        className={`w-0 my-auto mx-auto bg-gradient-to-r from-${background} to-bluepastel h-full group-hover:w-full transition-all  duration-700 ease-in-out delay-200 left-0 absolute `}
       />
     </div>
   );
@@ -62,7 +64,7 @@ export function HoverGradient3() {
 
   return (
     <div
-      className={`w-full flex flex-row relative h-40 transition-all duration-500`}
+      className={`z-0 w-full flex flex-row relative h-40 transition-all duration-500`}
     >
       <div className="w-full relative items-end justify-end">
         <div

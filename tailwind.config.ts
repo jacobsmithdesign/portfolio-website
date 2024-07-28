@@ -89,6 +89,7 @@ const config: Config = {
         redpastel: "#C85656",
         yellowpastel: "#DFB862",
         greenpastel: "#7D9B53",
+        purplepastel: "#9C7BB5",
       },
     },
   },

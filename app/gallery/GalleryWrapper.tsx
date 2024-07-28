@@ -86,7 +86,7 @@ function EnlargedGallery({ galleryDetails }) {
           width={800}
           height={800}
           unoptimized
-          className="object-contain w-full max-h-full "
+          className="object-contain w-full max-h-full"
           style={{ maxHeight: "calc(100vh - 128px)", maxWidth: "100%" }} // Ensure it fits within the viewport height and width
         />
       </div>

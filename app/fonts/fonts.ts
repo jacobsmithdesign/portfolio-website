@@ -15,11 +15,6 @@ export const inter = Inter({
   weight: ["100", "200", "300", "400", "800"],
 });
 
-export const platypi = Platypi({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "800"],
-});
-
 export const poppins = Poppins({
   weight: ["100", "200", "300", "400"],
   subsets: ["latin"],
@@ -58,5 +53,11 @@ export const tenPounds = localFont({
 export const calendas = localFont({
   src: "../fonts/Calendas Plus Italic.woff",
   variable: "--font-calendas",
+  display: "swap",
+});
+
+export const neonTube = localFont({
+  src: "../fonts/Neontube-Bold.woff",
+  variable: "--font-neontube",
   display: "swap",
 });

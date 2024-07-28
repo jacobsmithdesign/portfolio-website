@@ -25,7 +25,7 @@ export function IconCarousel() {
         </li>
         <li className="flex md:w-36 w-28 h-full">
           <DatoLogo />
-        </li>{" "}
+        </li>
         <li className="md:h-16 h-10 md:w-16 w-12 flex">
           <FigmaLogo />
         </li>
