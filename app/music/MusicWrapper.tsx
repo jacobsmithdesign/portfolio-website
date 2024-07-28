@@ -43,7 +43,7 @@ function MusicProject({ musicProject }) {
             }}
           >
             <div
-              className={`md:h-96 h-56 border-b border-r bg-secondary border-dark items-end flex relative group overflow-clip`}
+              className={`md:h-96 h-56 border-b border-r bg-secondary border-dark dark:border-light items-end flex relative group overflow-clip`}
             >
               <div
                 className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700`}
@@ -81,7 +81,7 @@ function MusicProject({ musicProject }) {
               </div>
               {/* Animated Border */}
               <div
-                className={`border-b border-dark ${animateContent ? "w-full" : "w-0"} transition-all duration-700 bottom-0 absolute`}
+                className={`border-b border-dark dark:border-light ${animateContent ? "w-full" : "w-0"} transition-all duration-700 bottom-0 absolute`}
                 style={{
                   transitionDelay: initialLoad
                     ? `${150 * (index + 1) + 600}ms`
@@ -113,7 +113,7 @@ function MusicComponent({ music, onMusicClick }) {
   }, [music]);
 
   return (
-    <div className="w-full">
+    <div className="w-full text-dark dark:text-light">
       <div
         className={` ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-500`}
       >
@@ -196,8 +196,8 @@ export function Music({ music }) {
 
   return (
     <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen transition-all duration-500">
-      <div className="border border-dark h-full relative overflow-hidden">
-        <div className="w-full text-center border-b border-dark md:h-24 h-12 group overflow-clip transition-all duration-500">
+      <div className="border border-dark dark:border-light h-full relative overflow-hidden">
+        <div className="w-full text-center border-b border-dark dark:border-light md:h-24 h-12 group overflow-clip transition-all duration-500">
           <h1
             className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light absolute z-10 transition-all duration-500`}
           >

@@ -28,14 +28,14 @@ function BlogComponent({ blog, onBlogClick }) {
   }, [blog]);
 
   return (
-    <div className="w-full">
+    <div className="w-full text-dark dark:text-light">
       <div
         className={`grid md:grid-cols-3 grid-cols-2 ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-500`}
       >
         {blog.map((blog, index) => (
           <button
             key={index}
-            className={`md:h-96 h-56 border-b transition-all duration-300 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-secondary border-dark items-end flex relative group overflow-clip`}
+            className={`md:h-96 h-56 border-b transition-all duration-300 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""}  border-dark dark:border-light items-end flex relative group overflow-clip`}
             onClick={() => onBlogClick(blog)}
           >
             <div
@@ -56,11 +56,11 @@ function BlogComponent({ blog, onBlogClick }) {
             >
               {blog.title}
             </h2>
-            <p className="absolute z-10 top-0 left-0 md:mt-6 md:ml-6 md:group-hover:mt-4 md:group-hover:ml-4 transition-all duration-300 ease-in-out text-dark md:group-hover:text-light font-bold">
+            <p className="absolute z-10 top-0 left-0 md:mt-6 md:ml-6 md:group-hover:mt-4 md:group-hover:ml-4 transition-all duration-300 ease-in-out text-dark dark:text-light md:group-hover:text-light font-bold">
               {blog.date}
             </p>
             <Arrow
-              className={`md:h-16 h-10 text-dark md:group-hover:text-light top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
+              className={`md:h-16 h-10 text-dark dark:text-light md:group-hover:text-light top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
             />
             <div className="md:group-hover:opacity-100 opacity-0 transition-all duration-300 bg-gradient-to-t from-dark to-transparent absolute w-full h-full" />
             <Image
@@ -114,8 +114,8 @@ export function Blog({ blog }) {
 
   return (
     <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen">
-      <div className="border border-dark h-full relative overflow-hidden">
-        <div className="w-full text-center border-b border-dark md:h-24 h-12 group overflow-clip">
+      <div className="border border-dark dark:border-light h-full relative overflow-hidden">
+        <div className="w-full text-center border-b border-dark dark:border-light md:h-24 h-12 group overflow-clip">
           <h1
             className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light absolute z-10`}
           >

@@ -14,47 +14,36 @@ export function MyThemeContextProvider(
   props: ThemePropsInterface
 ): ReactElement {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
-  useEffect(() => initialThemeHandler());
 
-  function isLocalStorageEmpty(): boolean {
-    return !localStorage.getItem("isDarkTheme");
-  }
-
-  function initialThemeHandler(): void {
-    if (isLocalStorageEmpty()) {
+  useEffect(() => {
+    const isDarkThemeFromLocalStorage = localStorage.getItem("isDarkTheme");
+    if (isDarkThemeFromLocalStorage === null) {
       localStorage.setItem("isDarkTheme", `true`);
-      document!.querySelector("body")!.classList.add("dark");
-      setIsDarkTheme(true);
+      document.documentElement.classList.add("dark");
     } else {
-      const isDarkTheme: boolean = JSON.parse(
-        localStorage.getItem("isDarkTheme")!
-      );
-      isDarkTheme && document!.querySelector("body")!.classList.add("dark");
-      setIsDarkTheme(() => {
-        return isDarkTheme;
-      });
+      const isDarkTheme = JSON.parse(isDarkThemeFromLocalStorage);
+      if (isDarkTheme) {
+        document.documentElement.classList.add("dark");
+      }
+      setIsDarkTheme(isDarkTheme);
     }
-  }
+  }, []);
 
-  function toggleThemeHandler(): void {
-    const isDarkTheme: boolean = JSON.parse(
-      localStorage.getItem("isDarkTheme")!
-    );
-    setIsDarkTheme(!isDarkTheme);
-    toggleDarkClassToBody();
-    setValueToLocalStorage();
-  }
-
-  function toggleDarkClassToBody(): void {
-    document!.querySelector("body")!.classList.toggle("dark");
-  }
-
-  function setValueToLocalStorage(): void {
-    localStorage.setItem("isDarkTheme", `${!isDarkTheme}`);
-  }
+  const toggleThemeHandler = (): void => {
+    setIsDarkTheme((prevTheme) => {
+      const newTheme = !prevTheme;
+      localStorage.setItem("isDarkTheme", `${newTheme}`);
+      if (newTheme) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      return newTheme;
+    });
+  };
 
   return (
-    <MyThemeContext.Provider value={{ isDarkTheme: true, toggleThemeHandler }}>
+    <MyThemeContext.Provider value={{ isDarkTheme, toggleThemeHandler }}>
       {props.children}
     </MyThemeContext.Provider>
   );

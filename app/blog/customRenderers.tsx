@@ -64,7 +64,7 @@ const customRenderers = [
     return (
       <blockquote
         key={key}
-        className={`${inter.className} border-l-4 border-gray-400 pl-4 my-4 italic `}
+        className={`${inter.className} border-l-4 border-secondary pl-4 my-4 italic `}
       >
         {children}
         {blockquoteNode.attribution && (

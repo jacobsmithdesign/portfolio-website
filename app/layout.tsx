@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <MyThemeContextProvider>
-        <body className={`${inter.className} text-dark bg-light`}>
+        <body className={`${inter.className} text-dark `}>
           <div className="grain absolute" />
           <PageTransitionProvider>
             <div className="absolute z-50 ml-2">

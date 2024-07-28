@@ -17,7 +17,7 @@ export function HoverGradient() {
           className={`h-0 my-auto mx-auto bg-greenpastel w-full group-hover:h-[96%] transition-all duration-500 ease-out delay-100 bottom-0 absolute`}
         />
         <div
-          className={`h-0 my-auto mx-auto bg-gradient-to-t from-${background} to-bluepastel w-full group-hover:h-[94%] transition-all duration-500 ease-out delay-150 bottom-0 absolute`}
+          className={`h-0 my-auto mx-auto bg-gradient-to-t from-dark to-bluepastel w-full group-hover:h-[94%] transition-all duration-500 ease-out delay-150 bottom-0 absolute`}
         />
       </div>
     </div>

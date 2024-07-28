@@ -35,7 +35,7 @@ function GalleryComponent({ gallery, onGalleryClick }) {
         {gallery.map((gallery, index) => (
           <button
             key={index}
-            className={`md:h-96 h-56 border-b transition-all duration-300 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-secondary border-dark items-end flex relative group overflow-clip`}
+            className={`md:h-96 h-56 border-b transition-all duration-300 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-secondary border-dark dark:border-light items-end flex relative group overflow-clip`}
             onClick={() => onGalleryClick(gallery)}
           >
             <div
@@ -105,9 +105,9 @@ export function GalleryWrapper({ gallery }) {
   };
 
   return (
-    <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen transition-all duration-500">
-      <div className="border border-dark h-full relative overflow-hidden">
-        <div className="w-full text-center border-b border-dark md:h-24 h-12 group overflow-clip transition-all duration-300">
+    <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen transition-all duration-500 text-dark dark:text-light">
+      <div className="border border-dark dark:border-light h-full relative overflow-hidden">
+        <div className="w-full text-center border-b border-dark dark:border-light md:h-24 h-12 group overflow-clip transition-all duration-300">
           <h1
             className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light absolute z-10 transition-all duration-500`}
           >

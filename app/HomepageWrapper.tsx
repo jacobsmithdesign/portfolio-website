@@ -90,7 +90,6 @@ export function HomePage({ navlinks, aboutDetails }) {
             className={`${animateSize ? "h-full" : "h-0"}  rounded-tl-3xl delay-[800ms] transition-all duration-700 w-full border border-dark dark:border-light ${inter.className} font-extrabold relative flex overflow-clip`}
             onClick={() => {
               toggleThemeHandler();
-              console.log(themeCtx);
             }}
           >
             <div

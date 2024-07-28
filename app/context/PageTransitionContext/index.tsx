@@ -7,10 +7,13 @@ import {
   ReactNode,
   createContext,
   use,
+  useContext,
+  useEffect,
   useTransition,
 } from "react";
 import { DELAY } from "./presets";
 import { noop, sleep, smoothScrollToTopOfPage } from "./utils";
+import MyThemeContext from "../themeContext";
 
 interface TransitionContextState {
   pending: boolean;
@@ -32,6 +35,7 @@ export const PageTransitionProvider: FC<PageTransitionProviderProps> = ({
   const pathname = usePathname();
   const [pending, start] = useTransition();
   const router = useRouter();
+  const { isDarkTheme } = useContext(MyThemeContext);
 
   const navigate = (href: string) => {
     start(async () => {
@@ -41,14 +45,7 @@ export const PageTransitionProvider: FC<PageTransitionProviderProps> = ({
   };
 
   const changeBodyColourForRoute = (route: string) => {
-    let colour = "black";
-    switch (route) {
-      case "/":
-        colour = "#DAD7CB";
-        break;
-      default:
-        colour = "#DAD7CB";
-    }
+    let colour = isDarkTheme ? "#3F3C38" : "#DAD7CB";
     document.body.style.backgroundColor = colour;
   };
 
