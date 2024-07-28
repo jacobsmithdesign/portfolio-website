@@ -18,7 +18,7 @@ export function IconCarousel() {
     >
       <ul
         x-ref="logos"
-        className="flex items-center justify-center md:justify-start [&_li]:md:mx-8 [&_li]:mx-4 animate-infiniteScroll text-light"
+        className="flex items-center justify-center md:justify-start [&_li]:md:mx-8 [&_li]:mx-4 animate-infiniteScroll text-light dark:text-dark transition-all duration-500"
       >
         <li className="md:h-16 h-10 md:w-16 w-10 flex">
           <CSSLogo />
@@ -41,7 +41,7 @@ export function IconCarousel() {
       </ul>
       <ul
         x-ref="logos"
-        className="flex items-center justify-center md:justify-start [&_li]:md:mx-8 [&_li]:mx-4  animate-infiniteScroll text-light"
+        className="flex items-center justify-center md:justify-start [&_li]:md:mx-8 [&_li]:mx-4  animate-infiniteScroll text-light dark:text-dark transition-all duration-500"
         area-hidden="true"
       >
         <li className="md:h-16 h-10 md:w-16 w-10 flex">

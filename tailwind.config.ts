@@ -67,6 +67,9 @@ const config: Config = {
       fadeOut: "fadeOut 0.5s ease-in-out forwards",
     },
     extend: {
+      transitionProperty: {
+        height: "height",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
