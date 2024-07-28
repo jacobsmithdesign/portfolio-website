@@ -140,7 +140,7 @@ export function HomePage({ navlinks, aboutDetails }) {
                 </div> */}
                 <div className="absolute w-2/3 md:h-20 rounded-br-2xl bg-redpastel z-20 ml-2" />
                 <div className="absolute w-2/3 md:h-20 rounded-br-xl bg-yellowpastel z-10 ml-4" />
-                <div className="absolute w-2/3 md:h-20 rounded-br-sm bg-bluepastel ml-6" />
+                <div className="absolute w-2/3 md:h-20 rounded-br-md bg-bluepastel ml-6" />
               </div>
               <div className="h-full justify-between flex flex-col">
                 <p className="font-medium md:text-lg text-sm px-5 my-3 text-balance md:pt-20 pt-12 transition-all">
@@ -192,7 +192,7 @@ export function HomePage({ navlinks, aboutDetails }) {
                 </div> */}
                 <div className="absolute w-2/3 md:h-20 rounded-br-2xl bg-redpastel z-20 ml-2" />
                 <div className="absolute w-2/3 md:h-20 rounded-br-xl bg-yellowpastel z-10 ml-4" />
-                <div className="absolute w-2/3 md:h-20 rounded-br-sm bg-bluepastel ml-6" />
+                <div className="absolute w-2/3 md:h-20 rounded-br-md bg-bluepastel ml-6" />
               </div>
               <div className="h-full w-full flex flex-col my-auto justify-center items-center relative md:pt-20 pt-12 ">
                 {navlinks.map((link, index) => (
@@ -236,7 +236,7 @@ export function HomePage({ navlinks, aboutDetails }) {
                 </div> */}
               <div className="absolute w-2/3 md:h-20 rounded-br-2xl bg-redpastel z-20 ml-2" />
               <div className="absolute w-2/3 md:h-20 rounded-br-xl bg-yellowpastel z-10 ml-4" />
-              <div className="absolute w-2/3 md:h-20 rounded-br-sm bg-bluepastel ml-6" />
+              <div className="absolute w-2/3 md:h-20 rounded-br-md bg-bluepastel ml-6" />
             </div>
             <a
               href="mailto:jwj.smith98@gmail.com"

@@ -17,7 +17,8 @@ import {
 function WebDevelopment({ webdevProject }) {
   const [animateContent, setAnimateContent] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
-
+  const background = "light";
+  const foreground = "dark";
   useEffect(() => {
     setAnimateContent(true);
 
@@ -40,7 +41,7 @@ function WebDevelopment({ webdevProject }) {
       </h2>
       {/* Animated Border */}
       <div
-        className={`border-b border-dark ${animateContent ? "w-full" : "w-0"} transition-all duration-700`}
+        className={`border-b border-${foreground} ${animateContent ? "w-full" : "w-0"} transition-all duration-700`}
       />
       <div
         className={` ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-500`}
@@ -58,7 +59,7 @@ function WebDevelopment({ webdevProject }) {
             <button key={index}>
               <a
                 href={project.url}
-                className={`md:h-96 h-56 border-b border-r bg-secondary border-dark items-end flex relative group overflow-clip`}
+                className={`md:h-96 h-56 border-b border-r bg-secondary border-${foreground} items-end flex relative group overflow-clip`}
               >
                 <div
                   className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700`}
@@ -69,7 +70,7 @@ function WebDevelopment({ webdevProject }) {
                   }}
                 />
                 <h2
-                  className={`${animateContent ? "pb-6 opacity-100" : "pb-0 opacity-0"} transition-all duration-700 ease-in-out pl-4 md:text-2xl text-md text-left text-balance font-bold absolute z-20 md:group-hover:text-light`}
+                  className={`${animateContent ? "pb-6 opacity-100" : "pb-0 opacity-0"} transition-all duration-700 ease-in-out pl-4 md:text-2xl text-md text-left text-balance font-bold absolute z-20 md:group-hover:text-${background}`}
                   style={{
                     transitionDelay: initialLoad
                       ? `${150 * (index + 1) + 400}ms`
@@ -79,9 +80,11 @@ function WebDevelopment({ webdevProject }) {
                   Visit website
                 </h2>
                 <Arrow
-                  className={`md:h-16 h-10 text-dark md:group-hover:text-light top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
+                  className={`md:h-16 h-10 text-${foreground} md:group-hover:text-${background} top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
                 />
-                <div className="md:group-hover:opacity-100 opacity-0 transition-all duration-300 bg-gradient-to-t from-dark to-transparent absolute w-full h-full" />
+                <div
+                  className={`md:group-hover:opacity-100 opacity-0 transition-all duration-300 bg-gradient-to-t from-${background} to-transparent absolute w-full h-full`}
+                />
                 <Image
                   src={project.image.url}
                   alt="background image for computer science project"
@@ -114,24 +117,34 @@ function WebDevelopment({ webdevProject }) {
                     : "0ms",
                 }}
               >
-                <div className="border-dark border flex md:flex-row flex-col">
-                  <div className="bg-bluepastel md:px-4 px-1 md:text-lg text-xs font-bold text-light">
+                <div
+                  className={`border-${foreground} border flex md:flex-row flex-col`}
+                >
+                  <div
+                    className={`bg-bluepastel md:px-4 px-1 md:text-lg text-xs font-bold text-light`}
+                  >
                     TypeScript
                   </div>
-                  <div className="bg-redpastel md:px-4 px-1 md:text-lg text-xs font-bold text-light ">
+                  <div
+                    className={`bg-redpastel md:px-4 px-1 md:text-lg text-xs font-bold text-light`}
+                  >
                     DatoCMS
                   </div>
-                  <div className="bg-dark md:px-4 px-1 md:text-lg text-xs font-bold text-light ">
+                  <div
+                    className={`bg-dark md:px-4 px-1 md:text-lg text-xs font-bold text-light`}
+                  >
                     NextJS
                   </div>
-                  <div className="bg-yellowpastel md:px-4 px-1 md:text-lg text-xs font-bold text-light ">
+                  <div
+                    className={`bg-yellowpastel md:px-4 px-1 md:text-lg text-xs font-bold text-light`}
+                  >
                     tailwindCSS
                   </div>
                 </div>
               </div>
               {/* Animated Border */}
               <div
-                className={`border-b border-dark ${animateContent ? "w-full" : "w-0"} transition-all duration-700 bottom-0 absolute`}
+                className={`border-b border-${foreground} ${animateContent ? "w-full" : "w-0"} transition-all duration-700 bottom-0 absolute`}
                 style={{
                   transitionDelay: initialLoad
                     ? `${150 * (index + 1) + 600}ms`
@@ -149,7 +162,8 @@ function WebDevelopment({ webdevProject }) {
 function CompterScience({ compSciProject, onProjectClick }) {
   const [animateContent, setAnimateContent] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
-
+  const background = "light";
+  const foreground = "dark";
   useEffect(() => {
     setAnimateContent(true);
 
@@ -172,7 +186,7 @@ function CompterScience({ compSciProject, onProjectClick }) {
       </h2>
       {/* Animated Border */}
       <div
-        className={`border-b border-dark ${animateContent ? "w-full" : "w-0"} transition-all duration-700`}
+        className={`border-b border-${foreground} ${animateContent ? "w-full" : "w-0"} transition-all duration-700`}
       />
       <div
         className={`grid md:grid-cols-3 grid-cols-2 ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-500`}
@@ -180,7 +194,7 @@ function CompterScience({ compSciProject, onProjectClick }) {
         {compSciProject.map((project, index) => (
           <button
             key={index}
-            className={`md:h-96 h-56 border-b transition-all duration-300 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-secondary border-dark items-end flex relative group overflow-clip`}
+            className={`md:h-96 h-56 border-b transition-all duration-300 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-${background} border-${foreground} items-end flex relative group overflow-clip`}
             onClick={() => onProjectClick(project)}
           >
             <div
@@ -192,7 +206,7 @@ function CompterScience({ compSciProject, onProjectClick }) {
               }}
             />
             <h2
-              className={`${animateContent ? "md:pb-6 pb-4 opacity-100" : "pb-0 opacity-0"} transition-all duration-700 ease-in-out md:px-4 px-2 md:text-2xl text-md text-left text-balance font-bold absolute z-20 md:group-hover:text-light`}
+              className={`${animateContent ? "md:pb-6 pb-4 opacity-100" : "pb-0 opacity-0"} transition-all duration-700 ease-in-out md:px-4 px-2 md:text-2xl text-md text-left text-balance font-bold absolute z-20 text-${foreground} md:group-hover:text-${background}`}
               style={{
                 transitionDelay: initialLoad
                   ? `${150 * (index + 1) + 400}ms`
@@ -202,9 +216,11 @@ function CompterScience({ compSciProject, onProjectClick }) {
               {project.title}
             </h2>
             <Arrow
-              className={`md:h-16 h-10 text-dark md:group-hover:text-light top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
+              className={`md:h-16 h-10 text-${foreground} md:group-hover:text-${background} top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
             />
-            <div className="md:group-hover:opacity-100 opacity-0 transition-all duration-300 bg-gradient-to-t from-dark to-transparent absolute w-full h-full" />
+            <div
+              className={`md:group-hover:opacity-100 opacity-0 transition-all duration-300 bg-gradient-to-t from-${background} to-transparent absolute w-full h-full`}
+            />
             <Image
               src={project.image.url}
               alt="background image for computer science project"
@@ -221,6 +237,8 @@ function CompterScience({ compSciProject, onProjectClick }) {
 
 function EnlargedProject({ projectDetails }) {
   if (!projectDetails) return null;
+  const background = "light";
+  const foreground = "dark";
 
   return (
     <div>
@@ -243,6 +261,8 @@ function EnlargedProject({ projectDetails }) {
 }
 export function ProjectWrapper({ compSciProject, webdevProject }) {
   const [selectedProject, setSelectedProject] = useState(null);
+  const background = "light";
+  const foreground = "dark";
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -253,9 +273,13 @@ export function ProjectWrapper({ compSciProject, webdevProject }) {
   };
 
   return (
-    <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen">
-      <div className="border border-dark h-full relative overflow-hidden">
-        <div className="w-full flex text-center border-b border-dark md:h-24 h-12 group overflow-clip">
+    <div
+      className={`py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen bg-${background}`}
+    >
+      <div
+        className={`border border-${foreground} h-full relative overflow-hidden`}
+      >
+        <div className="w-full flex text-center border-b border-${foreground} md:h-24 h-12 group overflow-clip">
           <h1
             className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light absolute z-10`}
           >
