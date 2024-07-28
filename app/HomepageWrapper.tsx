@@ -18,8 +18,9 @@ import Waves2 from "../public/waves2.svg";
 import Waves3 from "../public/waves3.svg";
 import Waves4 from "../public/waves4.svg";
 import Angle from "../public/angle.svg";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { animate } from "framer-motion";
+import MyThemeContext from "./context/themeContext";
 
 function ColourfulWaves() {
   return (
@@ -55,6 +56,13 @@ export function HomePage({ navlinks, aboutDetails }) {
   const [initialLoad, setInitialLoad] = useState(true);
   const [closeAnimation, setCloseAnimation] = useState(false);
 
+  const themeCtx: { isDarkMode?: boolean; toggleThemeHandler: () => void } =
+    useContext(MyThemeContext);
+
+  function toggleThemeHandler(): void {
+    themeCtx.toggleThemeHandler();
+  }
+
   useEffect(() => {
     setAnimateSize(true);
 
@@ -68,7 +76,7 @@ export function HomePage({ navlinks, aboutDetails }) {
 
   return (
     <main
-      className={`flex min-h-screen w-full md:flex-row flex-col md:justify-between bg-${background} transition-all duration-500 text-${foreground}`}
+      className={`flex min-h-screen w-full md:flex-row flex-col md:justify-between bg-light dark:bg-dark transition-all duration-500 text-dark dark:text-light`}
     >
       {/* Left column */}
       {/* Title card with name */}
@@ -79,10 +87,14 @@ export function HomePage({ navlinks, aboutDetails }) {
           className={`${animateSize ? "w-full" : "w-0"} md:h-1/3 h-1/6 pl-2 pt-2 md:pr-1 pr-2 pb-1 transition-all duration-700 overflow-clip`}
         >
           <div
-            className={`${animateSize ? "h-full" : "h-0"}  rounded-tl-3xl delay-[800ms] transition-all duration-700 w-full border border-${foreground} ${inter.className} font-extrabold relative flex overflow-clip`}
+            className={`${animateSize ? "h-full" : "h-0"}  rounded-tl-3xl delay-[800ms] transition-all duration-700 w-full border border-dark dark:border-light ${inter.className} font-extrabold relative flex overflow-clip`}
+            onClick={() => {
+              toggleThemeHandler();
+              console.log(themeCtx);
+            }}
           >
             <div
-              className={`md:w-0 md:border-r-0 border-r border-${foreground} w-11 transition-all duration-500 z-20 `}
+              className={`md:w-0 md:border-r-0 border-r border-dark dark:border-light w-11 transition-all duration-500 z-20 `}
             />
             <div
               className={`flex flex-col w-full h-full justify-end items-start md:px-4 px-1 transition-all duration-700 z-20 ${showContent ? "opacity-100" : "opacity-0"} delay-300`}
@@ -118,17 +130,17 @@ export function HomePage({ navlinks, aboutDetails }) {
           className={`${animateSize ? "w-full" : "w-0"} transition-all duration-700 md:h-2/3 h-1/3 overflow-clip pl-2 pb-2 md:pr-1 pr-2 pt-1 ${inter.className} `}
         >
           <div
-            className={` ${animateSize ? "h-full" : "h-0"} rounded-bl-3xl border border-${foreground} overflow-y-clip transition-all duration-700 delay-[1200ms]`}
+            className={` ${animateSize ? "h-full" : "h-0"} rounded-bl-3xl border border-dark dark:border-light overflow-y-clip transition-all duration-700 delay-[1200ms]`}
           >
             <div
               className={`w-full h-full ${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-[700ms] relative justify-between flex flex-col oveflow-clip `}
             >
               <div className="flex w-full relative">
                 <div
-                  className={`w-2/3 md:h-20 h-12 text-center flex items-center overflow-clip group absolute bg-${foreground} rounded-br-3xl z-40`}
+                  className={`w-2/3 md:h-20 h-12 text-center flex items-center overflow-clip group absolute bg-dark dark:bg-light rounded-br-3xl z-40`}
                 >
                   <h1
-                    className={`md:text-5xl text-3xl transition-all font-bold md:ml-4 ml-2 text-${background} absolute z-20 `}
+                    className={`md:text-5xl text-3xl transition-all font-bold md:ml-4 ml-2 text-light dark:text-dark absolute z-20 `}
                   >
                     About.
                   </h1>
@@ -151,7 +163,7 @@ export function HomePage({ navlinks, aboutDetails }) {
                     Skills
                   </h2>
                   <div
-                    className={`md:h-20 h-14 w-full border-t border-${foreground} md:pt-2 pt-2`}
+                    className={`md:h-20 h-14 w-full border-t border-dark dark:border-light md:pt-2 pt-2`}
                   >
                     <IconCarousel />
                   </div>
@@ -170,17 +182,17 @@ export function HomePage({ navlinks, aboutDetails }) {
           className={`${animateSize ? "w-full" : "w-0"} transition-all duration-700 md:h-2/3 h-full md:pl-1 pl-2 pb-1 pr-2 md:pt-2`}
         >
           <div
-            className={`${animateSize ? "h-full" : "h-0"} rounded-tr-3xl transition-all duration-700 delay-1000 border border-${foreground} relative justify-between flex flex-col`}
+            className={`${animateSize ? "h-full" : "h-0"} rounded-tr-3xl transition-all duration-700 delay-1000 border border-dark dark:border-light relative justify-between flex flex-col`}
           >
             <div
               className={`${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-700  h-full absolute w-full overflow-y-clip`}
             >
               <div className="flex w-full relative">
                 <div
-                  className={`w-2/3 md:h-20 h-12 text-center flex items-center overflow-clip group absolute mr-4 bg-${foreground} rounded-br-3xl z-40`}
+                  className={`w-2/3 md:h-20 h-12 text-center flex items-center overflow-clip group absolute mr-4 bg-dark dark:bg-light rounded-br-3xl z-40`}
                 >
                   <h1
-                    className={`md:text-5xl text-3xl transition-all font-bold md:ml-4 ml-2 text-${background} absolute z-20 bg-`}
+                    className={`md:text-5xl text-3xl transition-all font-bold md:ml-4 ml-2 text-light dark:text-dark absolute z-20 bg-`}
                   >
                     Navigation.
                   </h1>
@@ -199,10 +211,10 @@ export function HomePage({ navlinks, aboutDetails }) {
                   <Link
                     href={link.href}
                     key={index}
-                    className={`w-full h-1/6 bg-${background} text-center flex items-center justify-center overflow-clip group border-t border-b border-${foreground} my-2 `}
+                    className={`w-full h-1/6 bg-light dark:bg-dark text-center flex items-center justify-center overflow-clip group border-t border-b border-dark dark:border-light my-2 `}
                   >
                     <h1
-                      className={`${inter.className} md:group-hover:text-${background} transition-all duration-700 font-bold italic md:text-4xl text-2xl w-full pl-4 text-left absolute z-20`}
+                      className={`${inter.className} md:group-hover:text-light dark:text-light transition-all duration-700 font-bold italic md:text-4xl text-2xl w-full pl-4 text-left absolute z-20`}
                     >
                       {link.title}
                     </h1>
@@ -217,14 +229,14 @@ export function HomePage({ navlinks, aboutDetails }) {
           className={`${animateSize ? "w-full" : "w-0"} transition-all duration-700 md:h-1/3 h-56 md:pl-1 pl-2 pb-2 pr-2 pt-1`}
         >
           <div
-            className={`w-full ${animateSize ? "h-full " : "h-0"} transition-all duration-700 delay-[1500ms] border border-${foreground} ${inter.className} rounded-br-3xl flex flex-col overflow-clip`}
+            className={`w-full ${animateSize ? "h-full " : "h-0"} transition-all duration-700 delay-[1500ms] border border-dark dark:border-light ${inter.className} rounded-br-3xl flex flex-col overflow-clip`}
           >
             <div className="flex w-full md:h-20 h-12 relative">
               <div
-                className={`w-2/3 md:h-20 h-12 text-center flex items-center overflow-clip group absolute mr-4 bg-${foreground} rounded-br-3xl z-40`}
+                className={`w-2/3 md:h-20 h-12 text-center flex items-center overflow-clip group absolute mr-4 bg-dark dark:bg-light rounded-br-3xl z-40`}
               >
                 <h1
-                  className={`md:text-5xl text-3xl transition-all font-bold md:ml-4 ml-2 text-${background} absolute `}
+                  className={`md:text-5xl text-3xl transition-all font-bold md:ml-4 ml-2 text-light dark:text-dark absolute `}
                 >
                   Contact.
                 </h1>
@@ -240,10 +252,10 @@ export function HomePage({ navlinks, aboutDetails }) {
             </div>
             <a
               href="mailto:jwj.smith98@gmail.com"
-              className={`overflow-clip flex text-center items-center md:h-16 h-12 justify-center border-t border-b border-${foreground} group relative md:hover:bg-accent transition-all duration-300 my-auto`}
+              className={`overflow-clip flex text-center items-center md:h-16 h-12 justify-center border-t border-b border-dark dark:border-light group relative md:hover:bg-accent transition-all duration-300 my-auto`}
             >
               <h1
-                className={`md:text-4xl text-2xl ${title.className} bg-clip md:group-hover:scale-[103%] md:group-hover:text-${background} transition-all duration-300 absolute z-20 w-full overflow-clip`}
+                className={`md:text-4xl text-2xl ${title.className} bg-clip md:group-hover:scale-[103%] md:group-hover:text-light dark:text-light transition-all duration-300 absolute z-20 w-full overflow-clip`}
               >
                 jwj.smith98@gmail.com
               </h1>

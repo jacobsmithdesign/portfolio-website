@@ -5,6 +5,7 @@ import NavbarWrapper from "./ui/Navbar/navbarWrapper";
 import { PageTransitionProvider } from "./context/PageTransitionContext";
 import AnimateLayout from "./components/General/AnimateLayout";
 import { fetchNavbarlinks } from "./lib/fetchData";
+import MyThemeContext, { MyThemeContextProvider } from "./context/themeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,15 +21,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} text-dark bg-light`}>
-        <div className="grain absolute" />
-        <PageTransitionProvider>
-          <div className="absolute z-50 ml-2">
-            <NavbarWrapper />
-          </div>
-          <AnimateLayout>{children}</AnimateLayout>
-        </PageTransitionProvider>
-      </body>
+      <MyThemeContextProvider>
+        <body className={`${inter.className} text-dark bg-light`}>
+          <div className="grain absolute" />
+          <PageTransitionProvider>
+            <div className="absolute z-50 ml-2">
+              <NavbarWrapper />
+            </div>
+            <AnimateLayout>{children}</AnimateLayout>
+          </PageTransitionProvider>
+        </body>
+      </MyThemeContextProvider>
     </html>
   );
 }
