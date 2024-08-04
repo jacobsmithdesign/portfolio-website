@@ -252,7 +252,7 @@ function EnlargedProject({ projectDetails }) {
           alt={`Image for ${projectDetails.title}`}
           width={800}
           height={800}
-          className="object-cover md:w-1/2 w-full md:h-72 h-36"
+          className="object-cover md:w-1/2 w-full md:h-72 h-36 drop-shadow-xl rounded-xl"
         />
         <div className="md:w-1/2 w-full md:h-72 p-2 items-end flex">
           <h1 className="md:text-xl text-sm mx-4 text-left text-balance">
@@ -272,7 +272,7 @@ function EnlargedProject({ projectDetails }) {
             width={800}
             height={800}
             unoptimized
-            className="object-contain w-full md:max-h-[32rem] max-h-64 mb-10"
+            className="object-contain w-full md:max-h-[32rem] max-h-64 mb-10 drop-shadow-xl"
           />
         </div>
       ))}

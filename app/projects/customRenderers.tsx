@@ -17,7 +17,7 @@ const customRenderers = [
         return (
           <h1
             key={key}
-            className={`${inter.className} md:text-3xl text-lg mb-4 transition-all text-center font-bold md:pb-8`}
+            className={`${inter.className} md:text-3xl text-lg mb-4 transition-all text-center font-bold md:pb-8 `}
           >
             {children}
           </h1>
