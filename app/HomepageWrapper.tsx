@@ -234,16 +234,16 @@ export function HomePage({ navlinks, aboutDetails }) {
               <div className="absolute w-2/3 md:h-20 rounded-br-xl bg-yellowpastel z-10 ml-4" />
               <div className="absolute w-2/3 md:h-20 rounded-br-md bg-bluepastel ml-6" />
             </div>
-            <a
-              href="mailto:jwj.smith98@gmail.com"
+            <Link
+              href="/contact"
               className={`overflow-clip flex text-center items-center md:h-16 h-12 justify-center border-t border-b border-dark dark:border-light group relative md:hover:bg-accent transition-all duration-500 my-auto`}
             >
               <h1
                 className={`md:text-4xl text-2xl ${title.className} bg-clip md:group-hover:scale-[103%] md:group-hover:text-light transition-all duration-300 absolute z-20 w-full overflow-clip text-dark dark:text-light`}
               >
-                jwj.smith98@gmail.com
+                Get in touch
               </h1>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
