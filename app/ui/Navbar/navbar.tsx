@@ -67,7 +67,8 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
             </div>
           </Link>
         ))}
-        <div
+        <Link
+          href="/contact"
           className={`md:w-16 w-10 z-50 flex flex-col ${showContact ? "opacity-100" : "opacity-0"} transition-all duration-700 ease-in-out overflow-clip border h-1/4 mt-2 border-dark cursor-pointer bg-dark dark:bg-light group`}
         >
           <h1
@@ -76,7 +77,7 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
             Contact
           </h1>
           <HoverGradient />
-        </div>
+        </Link>
       </div>
     </div>
   );

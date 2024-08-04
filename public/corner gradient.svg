@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 300 300" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient gradientUnits="objectBoundingBox" cx="50%" cy="50%" fx="50%" fy="50%" r="50%" gradientTransform="translate(0.5,0.5),rotate(90),translate(-0.5,-0.5)" id="gradient_1">
+      <stop offset="0%" stop-color="currentColor" />
+      <stop offset="100%" stop-color="currentColor" stop-opacity="0" />
+    </radialGradient>
+    <path d="M300 0L300 0L300 300L0 300L0 0L300 0Z" id="path_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#path_1" clip-rule="evenodd" fill-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="Medium Rectangle">
+    <path d="M300 0L300 0L300 300L0 300L0 0L300 0Z" id="Medium-Rectangle" fill="none" stroke="none" />
+    <path d="M38 -262L563 -262L563 263L38 263L38 -262Z" id="Rectangle" fill="url(#gradient_1)" fill-rule="evenodd" stroke="none" clip-path="url(#clip_1)" />
+  </g>
+</svg>

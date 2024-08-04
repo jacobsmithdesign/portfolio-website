@@ -9,6 +9,7 @@ import { StructuredText } from "react-datocms";
 import customRenderers from "./customRenderers";
 import Close from "../../public/cross.svg";
 import Modal from "./projectModal";
+import CornerGradient from "../../public/corner gradient.svg";
 import {
   HoverGradient,
   HoverGradient2,
@@ -195,7 +196,7 @@ function CompterScience({ compSciProject, onProjectClick }) {
         {compSciProject.map((project, index) => (
           <button
             key={index}
-            className={`md:h-96 h-56 border-b transition-all duration-300 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-light dark:bg-dark border-dark dark:border-light items-end flex relative group overflow-clip`}
+            className={`md:h-96 h-56 border-b transition-all duration-300 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-light dark:bg-dark border-dark dark:border-light items-end flex relative group overflow-clip group`}
             onClick={() => onProjectClick(project)}
           >
             <div
@@ -207,7 +208,7 @@ function CompterScience({ compSciProject, onProjectClick }) {
               }}
             />
             <h2
-              className={`${animateContent ? "md:pb-6 pb-4 opacity-100" : "pb-0 opacity-0"} transition-all duration-700 ease-in-out md:px-4 px-2 md:text-2xl text-md text-left text-balance font-bold absolute z-20 text-dark dark:text-light`}
+              className={`${animateContent ? "md:pb-6 pb-4 opacity-100 md:group-hover:pb-8" : "pb-0 opacity-0"} transition-all duration-500 ease-out md:px-4 px-2 md:text-2xl text-md text-left text-balance font-bold absolute z-20 text-dark dark:text-light `}
               style={{
                 transitionDelay: initialLoad
                   ? `${150 * (index + 1) + 400}ms`
@@ -217,17 +218,19 @@ function CompterScience({ compSciProject, onProjectClick }) {
               {project.title}
             </h2>
             <Arrow
-              className={`md:h-16 h-10 text-dark dark:text-light top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
+              className={`md:h-16 h-10 text-dark dark:text-light top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-500 ease-out z-20`}
             />
             <div
-              className={`md:group-hover:opacity-100 opacity-0 transition-all duration-300 bg-gradient-to-t from-${background} to-transparent absolute w-full h-full`}
+              className={`md:group-hover:opacity-100 opacity-0 transition-all duration-300 bg-gradient-to-t from-light dark:from-dark to-transparent absolute w-full h-full`}
             />
+            <div className="absolute w-full h-2/5 bg-gradient-to-t from-light to-transparent dark:from-dark md:group-hover:opacity-80 opacity-0 transition-all duration-700 ease-in-out z-10" />
+            <CornerGradient className="w-40 h-40 text-light dark:text-dark absolute right-0 top-0 z-10 opacity-0 md:group-hover:opacity-50 transition-all duration-700 translate-x-6 -translate-y-6" />
             <Image
               src={project.image.url}
               alt="background image for computer science project"
               width={400}
               height={400}
-              className="object-cover overflow-clip w-full h-full absolute opacity-30 md:group-hover:opacity-60 transition-all duration-700 ease-in-out md:group-hover:scale-105"
+              className="object-cover overflow-clip w-full h-full absolute opacity-30 md:group-hover:opacity-80 transition-all duration-700 ease-in-out md:group-hover:scale-105"
             />
           </button>
         ))}
@@ -259,16 +262,17 @@ function EnlargedProject({ projectDetails }) {
       </div>
       {projectDetails.articles.map((article, index) => (
         <div key={index} className="pb-10">
+          <StructuredText
+            data={article.articleContent.value.document}
+            customNodeRules={customRenderers}
+          />
           <Image
             src={article.image.url}
             alt={`Article image ${index + 1}`}
             width={800}
             height={800}
+            unoptimized
             className="object-contain w-full md:max-h-[32rem] max-h-64 mb-10"
-          />
-          <StructuredText
-            data={article.articleContent.value.document}
-            customNodeRules={customRenderers}
           />
         </div>
       ))}
@@ -301,7 +305,7 @@ export function ProjectWrapper({ compSciProject, webdevProject }) {
           className={`w-full flex text-center border-b border-dark dark:border-light md:h-24 h-12 group overflow-clip`}
         >
           <h1
-            className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light absolute z-10`}
+            className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light absolute z-10 `}
           >
             Projects.
           </h1>

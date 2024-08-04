@@ -29,7 +29,9 @@ function Modal({ children, isOpen, onClose }) {
           >
             <Close />
           </button>
-          <h1 className="md:text-4xl text-sm font-bold md:my-7 my-3 text-left md:mr-0 mr-8 md:ml-8 ml-2 text-dark dark:text-light transition-all duration-500">
+          <h1
+            className={`md:text-4xl text-sm font-bold md:my-7 my-3 text-left md:mr-0 mr-8 md:ml-8 ml-2 text-dark dark:text-light transition-all duration-[75ms] ${!closeAnimation ? "opacity-0" : "opacity-100"}`}
+          >
             {children.props.projectDetails.title}
           </h1>
         </div>
