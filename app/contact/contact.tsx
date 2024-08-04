@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
 export function ContactForm() {
-  const [state, handleSubmit] = useForm("mdoqjnvz");
+  const [state, handleSubmit] = useForm("xzzprorw");
   const [animateContent, setAnimateContent] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
   useEffect(() => {
@@ -24,8 +24,8 @@ export function ContactForm() {
     return (
       <div className="items-center justify-center text-center h-full flex">
         <div className="">
-          <h1 className={`text-4xl text-blue-willow`}>Submission complete!</h1>
-          <p className={`text-xl text-blue-willow`}>
+          <h1 className={`text-2xl font-bold`}>Submission complete!</h1>
+          <p className={`md:text-lg text-sm`}>
             Thank you for your enquiry, we will get back to you as soon as
             possible.
           </p>
