@@ -17,7 +17,7 @@ const customRenderers = [
         return (
           <h1
             key={key}
-            className={`${inter.className} md:text-3xl text-lg my-4 transition-all`}
+            className={`${inter.className} md:text-3xl text-lg my-4 transition-all text-center font-bold md:pb-8`}
           >
             {children}
           </h1>
@@ -39,7 +39,7 @@ const customRenderers = [
   renderNodeRule(isParagraph, ({ children, key }) => (
     <p
       key={key}
-      className={`${inter.className} md:text-xl text-xs my-4 transition-all px-4 text-pretty`}
+      className={`${inter.className} md:text-xl text-xs my-4 transition-all md:px-12 text-pretty text-center`}
     >
       {children}
     </p>

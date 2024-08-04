@@ -19,11 +19,13 @@ export const ABOUT_QUERY = `
 export const COMPSCI_QUERY = `
 {
   allCompsciProjects {
-    title
-    content {
-      value
-    }
     image {url}
+    title
+    subcontent
+    articles {
+      image {url}
+      articleContent {value}
+    }
   }
 }
 `;

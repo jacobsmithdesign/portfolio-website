@@ -199,7 +199,7 @@ function CompterScience({ compSciProject, onProjectClick }) {
             onClick={() => onProjectClick(project)}
           >
             <div
-              className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700`}
+              className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700 `}
               style={{
                 transitionDelay: initialLoad
                   ? `${150 * (index + 1) + 400}ms`
@@ -207,7 +207,7 @@ function CompterScience({ compSciProject, onProjectClick }) {
               }}
             />
             <h2
-              className={`${animateContent ? "md:pb-6 pb-4 opacity-100" : "pb-0 opacity-0"} transition-all duration-700 ease-in-out md:px-4 px-2 md:text-2xl text-md text-left text-balance font-bold absolute z-20 text-dark dark:text-light md:group-hover:text-${background}`}
+              className={`${animateContent ? "md:pb-6 pb-4 opacity-100" : "pb-0 opacity-0"} transition-all duration-700 ease-in-out md:px-4 px-2 md:text-2xl text-md text-left text-balance font-bold absolute z-20 text-dark dark:text-light`}
               style={{
                 transitionDelay: initialLoad
                   ? `${150 * (index + 1) + 400}ms`
@@ -217,7 +217,7 @@ function CompterScience({ compSciProject, onProjectClick }) {
               {project.title}
             </h2>
             <Arrow
-              className={`md:h-16 h-10 text-dark dark:text-light md:group-hover:text-${background} top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
+              className={`md:h-16 h-10 text-dark dark:text-light top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
             />
             <div
               className={`md:group-hover:opacity-100 opacity-0 transition-all duration-300 bg-gradient-to-t from-${background} to-transparent absolute w-full h-full`}
@@ -242,18 +242,36 @@ function EnlargedProject({ projectDetails }) {
   const foreground = "dark";
 
   return (
-    <div className="text">
-      <Image
-        src={projectDetails.image.url}
-        alt={`Image for ${projectDetails.title}`}
-        width={800}
-        height={800}
-        className="object-cover w-full h-96 mb-4"
-      />
-      <StructuredText
-        data={projectDetails.content.value.document}
-        customNodeRules={customRenderers}
-      />
+    <div className="w-full">
+      <div className="flex md:flex-row flex-col md:pb-10 pb-4 border-b border-dark dark:border-light md:mb-10 mb-4">
+        <Image
+          src={projectDetails.image.url}
+          alt={`Image for ${projectDetails.title}`}
+          width={800}
+          height={800}
+          className="object-cover md:w-1/2 w-full md:h-72 h-36"
+        />
+        <div className="md:w-1/2 w-full md:h-72 p-2 items-end flex">
+          <h1 className="md:text-xl text-sm mx-4 text-left text-balance">
+            {projectDetails.subcontent}
+          </h1>
+        </div>
+      </div>
+      {projectDetails.articles.map((article, index) => (
+        <div key={index} className="pb-10">
+          <Image
+            src={article.image.url}
+            alt={`Article image ${index + 1}`}
+            width={800}
+            height={800}
+            className="object-contain w-full md:max-h-[32rem] max-h-64 mb-10"
+          />
+          <StructuredText
+            data={article.articleContent.value.document}
+            customNodeRules={customRenderers}
+          />
+        </div>
+      ))}
     </div>
   );
 }
