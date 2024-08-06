@@ -5,17 +5,17 @@ import Arrow from "../../public/diagonal-arrow.svg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { animate } from "framer-motion";
 
 export function ContactForm() {
   const [state, handleSubmit] = useForm("xzzprorw");
   const [animateContent, setAnimateContent] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
   useEffect(() => {
-    setAnimateContent(true);
-
     const timeout = setTimeout(() => {
+      setAnimateContent(true);
       setInitialLoad(false);
-    }, 1000); // Adjust the timeout as needed
+    }, 500); // Adjust the timeout as needed
 
     return () => clearTimeout(timeout);
   }, []);
@@ -25,22 +25,22 @@ export function ContactForm() {
       <div className="items-center justify-center text-center h-full flex">
         <div className="">
           <h1 className={`text-2xl font-bold`}>Submission complete!</h1>
-          <p className={`md:text-lg text-sm`}>
-            Thank you for your enquiry, we will get back to you as soon as
-            possible.
-          </p>
+          <p className={`md:text-lg text-sm`}>Thanks for Reaching out</p>
         </div>
       </div>
     );
   }
   return (
-    <div className="mx-auto h-full overflow-y-scroll hide-scrollbar md:pt-0">
+    <div
+      className={`mx-auto h-full overflow-y-scroll hide-scrollbar md:pt-0 ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700`}
+    >
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-[38rem] mx-auto flex flex-col h-full justify-center"
       >
         <div className="w-full justify-between flex items-center">
           <h1 className="text-2xl font-bold mb-2">Make an enquiry</h1>
+          <p className={`md:text-lg text-sm`}></p>
         </div>
         {/* Customer details box*/}
         <div className="  md:border-l md:border-r border-t border-b border-dark dark:border-light">
