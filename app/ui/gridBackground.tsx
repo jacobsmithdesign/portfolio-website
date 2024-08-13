@@ -59,7 +59,7 @@ const GridBackground: React.FC = () => {
 
   return (
     <>
-      <div className="absolute w-full h-full backdrop-blur-2xl z-10 pointer-events-none flex" />
+      {/* <div className="absolute w-full h-full backdrop-blur-2xl z-10 pointer-events-none flex" /> */}
       <div
         ref={containerRef}
         className="absolute w-full h-full opacity-70 md:grid hidden"
