@@ -36,13 +36,13 @@ const GridBackground: React.FC = () => {
     };
   }, []);
 
-  // Create the grid items
+  // Create the array of divs with
   const gridItems = Array.from({
     length: gridSize.rows * gridSize.columns,
   }).map((_, index) => (
     <div
       key={index}
-      className="w-full h-full relative "
+      className="w-full h-fullrelative"
       onMouseEnter={(e) => {
         console.log("entered");
         (e.target as HTMLDivElement).style.transition = "0.02s ease";

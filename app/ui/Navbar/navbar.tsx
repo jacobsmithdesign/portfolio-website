@@ -29,7 +29,7 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
       // Hide navbar on the home page
       setShowNavbarLinks(false);
       setShowContact(false);
-      setTimeout(() => setShowNavbar(false), 1000);
+      setTimeout(() => setShowNavbar(false), 500);
     } else {
       setShowNavbar(true);
       setTimeout(() => setShowNavbarLinks(true), 500);

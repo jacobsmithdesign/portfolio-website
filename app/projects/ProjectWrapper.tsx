@@ -105,7 +105,7 @@ function WebDevelopment({ webdevProject }) {
             </button>
             <div className="md:col-span-2 md:h-full h-56 flex flex-col relative">
               <h1
-                className={`md:text-4xl text-md font-bold ${animateContent ? "pl-4" : "pl-0"} pt-4 transition-all duration-500`}
+                className={`md:text-4xl text-md font-bold ${animateContent ? "pl-4" : "pl-0"} pt-4 transition-all duration-500 ease-out`}
                 style={{
                   transitionDelay: initialLoad
                     ? `${150 * (index + 1) + 400}ms`
@@ -114,10 +114,19 @@ function WebDevelopment({ webdevProject }) {
               >
                 {project.title}
               </h1>
-              <StructuredText
-                data={project.content.value.document}
-                customNodeRules={customRenderers}
-              />
+              <div
+                className={`${animateContent ? "pl-4" : "pl-0"} ransition-all duration-500 ease-out`}
+                style={{
+                  transitionDelay: initialLoad
+                    ? `${150 * (index + 1) + 500}ms`
+                    : "0ms",
+                }}
+              >
+                <StructuredText
+                  data={project.content.value.document}
+                  customNodeRules={customRenderers}
+                />
+              </div>
               <div
                 className={`flex justify-end items-end ml-2 h-full mb-2 ${animateContent ? "mr-2" : "mr-8"} transition-all duration-700`}
                 style={{
@@ -276,14 +285,16 @@ function EnlargedProject({ projectDetails }) {
             data={article.articleContent.value.document}
             customNodeRules={customRenderers}
           />
-          <Image
-            src={article.image.url}
-            alt={`Article image ${index + 1}`}
-            width={800}
-            height={800}
-            unoptimized
-            className="object-contain w-full md:max-h-[32rem] max-h-64 mb-10 drop-shadow-xl"
-          />
+          {article.image?.url && (
+            <Image
+              src={article.image.url}
+              alt={`Article image ${index + 1}`}
+              width={800}
+              height={800}
+              unoptimized
+              className="object-contain w-full md:max-h-[32rem] max-h-64 mb-10 drop-shadow-xl"
+            />
+          )}
         </div>
       ))}
     </div>
