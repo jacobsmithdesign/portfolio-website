@@ -60,7 +60,6 @@ export function ContactForm() {
               required
             />
           </div>
-
           <input
             id="email"
             name="Email address"
@@ -86,7 +85,6 @@ export function ContactForm() {
             />
           </div>
         </div>
-
         <ValidationError prefix="Email" field="email" errors={state.errors} />
         <ValidationError
           prefix="Message"

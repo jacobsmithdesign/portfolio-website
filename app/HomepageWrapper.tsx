@@ -21,6 +21,7 @@ import Angle from "../public/angle.svg";
 import { useContext, useEffect, useState } from "react";
 import { animate } from "framer-motion";
 import MyThemeContext from "./context/themeContext";
+import GridBackground from "./ui/gridBackground";
 
 function ColourfulWaves() {
   return (
@@ -176,7 +177,7 @@ export function HomePage({ navlinks, aboutDetails }) {
           className={`${animateSize ? "w-full" : "w-0"} transition-all duration-700 md:h-2/3 h-full md:pl-1 pl-2 pb-1 pr-2 md:pt-2`}
         >
           <div
-            className={`${animateSize ? "md:h-full h-96" : "h-0"} md:rounded-tr-3xl transition-height duration-700 delay-1000 border border-dark dark:border-light relative justify-between flex flex-col`}
+            className={`${animateSize ? "md:h-full h-96" : "h-0"} md:rounded-tr-3xl transition-height duration-700 delay-1000 border border-dark dark:border-light relative justify-between flex flex-col overflow-hidden`}
           >
             <div
               className={`${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-700  h-full absolute w-full overflow-y-clip`}
@@ -193,14 +194,14 @@ export function HomePage({ navlinks, aboutDetails }) {
                 </div>
                 <div className="absolute w-2/3 md:h-20 rounded-br-2xl bg-redpastel z-20 ml-2" />
                 <div className="absolute w-2/3 md:h-20 rounded-br-xl bg-yellowpastel z-10 ml-4" />
-                <div className="absolute w-2/3 md:h-20 rounded-br-md bg-bluepastel ml-6" />
+                <div className="absolute w-2/3 md:h-20 rounded-br-md bg-bluepastel z-[6] ml-6" />
               </div>
               <div className="h-full w-full flex flex-col my-auto justify-center items-center relative md:pt-20 pt-12 ">
                 {navlinks.map((link, index) => (
                   <Link
                     href={link.href}
                     key={index}
-                    className={`w-full h-1/6  text-center flex items-center justify-center overflow-clip group border-t border-b border-dark dark:border-light my-2 duration-500`}
+                    className={`w-full h-1/6  text-center flex items-center justify-center overflow-clip group border-t border-b border-dark dark:border-light my-2 duration-500 z-20 bg-light dark:bg-dark`}
                   >
                     <h1
                       className={`${inter.className} md:group-hover:text-light dark:text-light text-dark transition-all duration-500 font-bold italic md:text-4xl text-2xl w-full pl-4 text-left absolute z-20`}
@@ -215,12 +216,12 @@ export function HomePage({ navlinks, aboutDetails }) {
           </div>
         </div>
         <div
-          className={`${animateSize ? "w-full" : "w-0"} transition-all duration-700 md:h-1/3 h-56 md:pl-1 pl-2 pb-2 pr-2 pt-1`}
+          className={`${animateSize ? "w-full" : "w-0"} transition-all duration-700 md:h-1/3 h-56 md:pl-1 pl-2 pb-2 pr-2 pt-1 `}
         >
           <div
-            className={`w-full ${animateSize ? "h-full " : "h-0"} transition-height duration-700 md:delay-[1500ms] delay-[1300ms] border border-dark dark:border-light ${inter.className} rounded-b-3xl md:rounded-bl-none flex flex-col overflow-clip`}
+            className={`w-full ${animateSize ? "h-full " : "h-0"} transition-height duration-700 md:delay-[1500ms] delay-[1300ms] border border-dark dark:border-light ${inter.className} rounded-b-3xl md:rounded-bl-none flex flex-col overflow-hidden relative`}
           >
-            <div className="flex w-full md:h-20 h-12 relative">
+            <div className="flex w-full md:h-20 h-12">
               <div
                 className={`w-2/3 md:h-20 h-12 text-center flex items-center overflow-clip group absolute mr-4 bg-dark dark:bg-light rounded-br-3xl z-40 duration-500`}
               >
@@ -236,7 +237,7 @@ export function HomePage({ navlinks, aboutDetails }) {
             </div>
             <Link
               href="/contact"
-              className={`overflow-clip flex text-center items-center md:h-16 h-12 justify-center border-t border-b border-dark dark:border-light group relative md:hover:bg-accent transition-all duration-500 my-auto`}
+              className={`overflow-clip flex text-center items-center md:h-16 h-12 justify-center border-t border-b border-dark dark:border-light group relative bg-light dark:bg-dark md:hover:bg-accent transition-all duration-500 my-auto z-20`}
             >
               <h1
                 className={`md:text-4xl text-2xl ${title.className} bg-clip md:group-hover:scale-[103%] md:group-hover:text-light transition-all duration-300 absolute z-20 w-full overflow-clip text-dark dark:text-light`}

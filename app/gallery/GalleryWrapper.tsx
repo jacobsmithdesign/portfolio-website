@@ -9,6 +9,7 @@ import { StructuredText } from "react-datocms";
 import customRenderers from "./customRenderers";
 import Modal from "./galleryModal";
 import { HoverGradient3 } from "../components/hoverGradient";
+import GridBackground, { GridBackground2 } from "../ui/gridBackground";
 
 function GalleryComponent({ gallery, onGalleryClick }) {
   const [animateContent, setAnimateContent] = useState(false);
@@ -123,6 +124,7 @@ export function GalleryWrapper({ gallery }) {
           <Modal isOpen={selectedGallery !== null} onClose={handleClose}>
             <EnlargedGallery galleryDetails={selectedGallery} />
           </Modal>
+          <GridBackground />
         </div>
       </div>
     </div>

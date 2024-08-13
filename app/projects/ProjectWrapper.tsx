@@ -16,6 +16,8 @@ import {
   HoverGradient3,
 } from "../components/hoverGradient";
 import MyThemeContext from "../context/themeContext";
+import { Graduate } from "next/font/google";
+import GridBackground from "../ui/gridBackground";
 function WebDevelopment({ webdevProject }) {
   const [animateContent, setAnimateContent] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
@@ -36,11 +38,16 @@ function WebDevelopment({ webdevProject }) {
 
   return (
     <div className="w-full text-dark dark:text-light">
-      <h2
-        className={`${animateContent ? "opacity-100" : "opacity-0"} duration-700 md:text-4xl text-2xl md:pl-8 pl-4 md:py-8 py-4`}
+      <div
+        className={`w-full h-full relative flex ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-500 delay-700`}
       >
-        Web Development
-      </h2>
+        <h2
+          className={`${animateContent ? "opacity-100" : "opacity-0"}  duration-700 md:text-4xl text-2xl md:pl-8 pl-4 md:py-8 py-4 z-20 h-full pointer-events-none`}
+        >
+          Web Development
+        </h2>
+        <GridBackground />
+      </div>
       {/* Animated Border */}
       <div
         className={`border-b border-dark dark:border-light ${animateContent ? "w-full" : "w-0"} transition-all duration-700`}
@@ -180,12 +187,15 @@ function CompterScience({ compSciProject, onProjectClick }) {
   }, [compSciProject]);
 
   return (
-    <div className="w-full text-dark dark:text-light">
-      <h2
-        className={`${animateContent ? "opacity-100" : "opacity-0"} duration-700 md:text-4xl text-2xl md:pl-8 pl-4 md:py-8 py-4`}
-      >
-        Computer Science
-      </h2>
+    <div className="w-full text-dark dark:text-light ">
+      <div className="w-full h-full relative flex">
+        <h2
+          className={`${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-500 duration-700 md:text-4xl text-2xl md:pl-8 pl-4 md:py-8 py-4 z-20 h-full delay-700 pointer-events-none`}
+        >
+          Computer Science
+        </h2>
+        <GridBackground />
+      </div>
       {/* Animated Border */}
       <div
         className={`border-b border-dark dark:border-light ${animateContent ? "w-full" : "w-0"} transition-all duration-700`}
@@ -305,13 +315,13 @@ export function ProjectWrapper({ compSciProject, webdevProject }) {
           className={`w-full flex text-center border-b border-dark dark:border-light md:h-24 h-12 group overflow-clip`}
         >
           <h1
-            className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light absolute z-10 `}
+            className={`${inter.className} pl-2 lg:text-8xl md:text-6xl text-5xl overflow-clip text-left font-bold text-tertiary text-light absolute z-10`}
           >
             Projects.
           </h1>
           <HoverGradient3 />
         </div>
-        <div className="overflow-y-scroll h-full hide-scrollbar md:pb-24 pb-12">
+        <div className="overflow-y-scroll h-full hide-scrollbar md:pb-0 pb-12">
           <WebDevelopment webdevProject={webdevProject} />
           <CompterScience
             compSciProject={compSciProject}
@@ -320,6 +330,7 @@ export function ProjectWrapper({ compSciProject, webdevProject }) {
           <Modal isOpen={selectedProject !== null} onClose={handleClose}>
             <EnlargedProject projectDetails={selectedProject} />
           </Modal>
+          <GridBackground />
         </div>
       </div>
     </div>

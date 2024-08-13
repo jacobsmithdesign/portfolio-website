@@ -11,6 +11,7 @@ import {
   HoverGradient3,
 } from "@/app/components/hoverGradient";
 import MyThemeContext from "@/app/context/themeContext";
+import GridBackground, { GridBackground2 } from "../gridBackground";
 
 export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
   const pathname = usePathname();
@@ -18,6 +19,7 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
   const [showNavbarLinks, setShowNavbarLinks] = useState(false);
   const [showContact, setShowContact] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedRoute, setSelectedRoute] = useState<Number | null>(null);
 
   const themeCtx: { isDarkMode?: boolean; toggleThemeHandler: () => void } =
     useContext(MyThemeContext);
@@ -54,16 +56,20 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
           <Link
             href={link.href}
             key={index}
-            className={`${showNavbarLinks ? "h-1/4 opacity-100" : "h-0 opacity-0"} duration-1000 ease-in-out border-dark dark:border-light border-r border-l ${index == 3 ? "border-b" : ""}`}
+            onClick={() => {
+              setSelectedRoute(index);
+            }}
+            className={`${showNavbarLinks ? "h-1/4 opacity-100" : "h-0 opacity-0"} duration-1000 ease-in-out border-dark dark:border-light border-r border-l ${index == 2 ? "border-b" : ""}`}
           >
             <div
-              className={`h-full w-full transition-all duration-150 overflow-clip ${showNavbarLinks ? "border-t" : "border-t-0"} hover:bg-secondary text-dark dark:text-light dark:hover:bg-secondary/20 flex ${index != 0 ? "border-secondary" : "border-dark dark:border-light"} bg-light dark:bg-dark relative items-end md:pb-8 pb-4`}
+              className={`h-full w-full transition-all duration-150 overflow-clip ${showNavbarLinks ? "border-t" : "border-t-0"}  text-dark dark:text-light flex ${index != 0 ? "border-secondary" : "border-dark dark:border-light"} ${pathname === link.href ? "bg-secondary dark:bg-secondary/30" : "bg-light dark:bg-dark"} relative items-end transition-all duration-500`}
             >
               <h1
-                className={`rotate-[-90deg] absolute w-full my-auto transition-all duration-500 delay-200 ${showNavbarLinks ? "opacity-100" : "opacity-0"}`}
+                className={`rotate-[-90deg] absolute w-full my-auto transition-all duration-500 delay-200 ${showNavbarLinks ? "opacity-100" : "opacity-0"} z-30 pointer-events-none pl-8`}
               >
                 {link.title}
               </h1>
+              <GridBackground2 />
             </div>
           </Link>
         ))}

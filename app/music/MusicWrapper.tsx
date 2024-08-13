@@ -9,6 +9,7 @@ import { StructuredText } from "react-datocms";
 import customRenderers from "./customRenderers";
 import Modal from "./musicModal";
 import { HoverGradient3 } from "../components/hoverGradient";
+import GridBackground from "../ui/gridBackground";
 
 function MusicProject({ musicProject }) {
   const [animateContent, setAnimateContent] = useState(false);
@@ -210,6 +211,7 @@ export function Music({ music }) {
           <Modal isOpen={selectedMusic !== null} onClose={handleClose}>
             <EnlargedMusic musicDetails={selectedMusic} />
           </Modal>
+          <GridBackground />
         </div>
       </div>
     </div>
