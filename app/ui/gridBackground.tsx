@@ -42,7 +42,7 @@ const GridBackground: React.FC = () => {
   }).map((_, index) => (
     <div
       key={index}
-      className="w-full h-fullrelative"
+      className="w-full h-full relative "
       onMouseEnter={(e) => {
         console.log("entered");
         (e.target as HTMLDivElement).style.transition = "0.02s ease";
