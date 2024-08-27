@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { animate } from "framer-motion";
+import Link from "next/link";
 
 export function ContactForm() {
   const [state, handleSubmit] = useForm("xzzprorw");
@@ -22,10 +23,21 @@ export function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <div className="items-center justify-center text-center h-full flex">
-        <div className="">
-          <h1 className={`text-2xl font-bold`}>Submission complete!</h1>
-          <p className={`md:text-lg text-sm`}>Thanks for Reaching out</p>
+      <div
+        className={`mx-auto h-full overflow-y-scroll hide-scrollbar md:pt-0 transition-all duration-700`}
+      >
+        <div className="w-full max-w-[38rem] mx-auto flex flex-col h-full justify-center">
+          <h1 className="text-2xl font-bold mb-2">Submission complete</h1>
+          <p className={`md:text-lg text-sm`}>
+            Thanks for Reaching out! I'll get in touch soon.
+          </p>
+          <Link href={"/"}>
+            <button
+              className={`w-32 text-lg text-light md:hover:text-pollen text-raw-silk text-center mt-2 mb-8 md:hover:bg-raw-silk bg-accent md:hover:bg-bluepastel border border-dark dark:border-light transition-all font-bold`}
+            >
+              Return home
+            </button>
+          </Link>
         </div>
       </div>
     );

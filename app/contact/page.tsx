@@ -4,7 +4,7 @@ import { Form } from "react-hook-form";
 import ContactForm from "./contact";
 const Contact: React.FC = async () => {
   return (
-    <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen transition-all duration-500 text-dark dark:text-light">
+    <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen transition-all duration-500 text-dark dark:text-light bg-light dark:bg-dark">
       <div className="border border-dark dark:border-light h-full relative overflow-hidden">
         <div className="w-full text-center border-b border-dark dark:border-light md:h-24 h-12 group overflow-clip transition-all duration-300">
           <h1

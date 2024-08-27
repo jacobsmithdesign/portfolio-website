@@ -88,7 +88,7 @@ export function HomePage({ navlinks, aboutDetails }) {
           className={`${animateSize ? "w-full" : "w-0"} md:h-1/3 h-1/6 pl-2 pt-2 md:pr-1 pr-2 pb-1 transition-all duration-700 overflow-clip`}
         >
           <div
-            className={`${animateSize ? "md:h-full h-28" : "h-0"} md:delay-[800ms] delay-500 transition-height md:rounded-tr-none rounded-t-3xl duration-700 w-full border border-dark dark:border-light ${inter.className} font-extrabold relative flex overflow-clip group cursor-pointer`}
+            className={`${animateSize ? "md:h-full h-28" : "h-0"} transition-height md:rounded-tr-none rounded-t-3xl duration-700 w-full border border-dark dark:border-light ${inter.className} font-extrabold relative flex overflow-clip group cursor-pointer`}
             onClick={() => {
               toggleThemeHandler();
             }}
@@ -127,13 +127,14 @@ export function HomePage({ navlinks, aboutDetails }) {
         </div>
         {/* About section */}
         <div
-          className={`${animateSize ? "w-full" : "w-0"} transition-all duration-700 md:h-2/3 h-1/3 overflow-clip pl-2 pb-2 md:pr-1 pr-2 pt-1 ${inter.className} `}
+          className={`${animateSize ? "w-full opacity-100" : "w-0 max-h-0 opacity-0"} transition-all duration-700 md:h-2/3 overflow-clip pl-2 pb-2 md:pr-1 pr-2 pt-1 ${inter.className} delay-300 md:delay-500`}
         >
+          {/* Doesnt animate height properly unless a specific height is set just for mobile. */}
           <div
-            className={` ${animateSize ? "md:h-full h-64" : "h-0"} md:rounded-bl-3xl border border-dark dark:border-light overflow-y-clip transition-height duration-700 md:delay-[1200ms] delay-700`}
+            className={` ${animateSize ? "md:h-full h-[30rem]" : "h-0"} md:delay-[1200ms] delay-[1200ms] md:rounded-bl-3xl border border-dark dark:border-light overflow-clip transition-height duration-700`}
           >
             <div
-              className={`w-full h-full ${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-1000 relative justify-between flex flex-col oveflow-clip `}
+              className={`w-full ${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-1000 relative justify-between flex flex-col oveflow-clip `}
             >
               <div className="flex w-full relative">
                 <div
@@ -164,7 +165,7 @@ export function HomePage({ navlinks, aboutDetails }) {
                     className={`w-full border-t border-dark dark:border-light md:pt-2 pt-2 transition-all duration-500`}
                   ></div>
                   <h3
-                    className="md:text-2xl text-lg font-bold pb-4 text-left ml-5
+                    className="md:text-2xl text-xl font-bold pb-4 text-left mx-5
                  transition-all text-dark dark:text-light"
                   >
                     Queensland University of Technology
@@ -184,7 +185,7 @@ export function HomePage({ navlinks, aboutDetails }) {
                   </p>
                 </div>
                 <div>
-                  <h2 className="md:text-4xl text-2xl font-bold pb-3 text-left ml-5 transition-all text-dark dark:text-light">
+                  <h2 className="md:text-4xl text-2xl font-bold pb-3 text-left mx-5 transition-all text-dark dark:text-light">
                     Skills
                   </h2>
                   <div
@@ -204,10 +205,10 @@ export function HomePage({ navlinks, aboutDetails }) {
 
       <div className="md:w-1/2 w-full md:h-screen">
         <div
-          className={`${animateSize ? "w-full" : "w-0"} transition-all duration-700 md:h-2/3 h-full md:pl-1 pl-2 pb-1 pr-2 md:pt-2`}
+          className={`${animateSize ? "w-full opacity-100" : "w-0 opacity-0"} transition-all duration-700 md:h-2/3 h-full md:pl-1 pl-2 pb-1 pr-2 md:pt-2 md:delay-300 delay-500`}
         >
           <div
-            className={`${animateSize ? "md:h-full h-96" : "h-0"} md:rounded-tr-3xl transition-height duration-700 delay-1000 border border-dark dark:border-light relative justify-between flex flex-col overflow-hidden`}
+            className={`${animateSize ? "md:h-full h-96" : "h-0"} md:rounded-tr-3xl transition-height duration-700 delay-[1000ms] border border-dark dark:border-light relative justify-between flex flex-col overflow-hidden`}
           >
             <div
               className={`${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-700  h-full absolute w-full overflow-y-clip`}
@@ -246,7 +247,7 @@ export function HomePage({ navlinks, aboutDetails }) {
           </div>
         </div>
         <div
-          className={`${animateSize ? "w-full" : "w-0"} transition-all duration-700 md:h-1/3 h-56 md:pl-1 pl-2 pb-2 pr-2 pt-1 `}
+          className={`${animateSize ? "w-full opacity-100" : "w-0 opacity-0"} transition-all duration-700 md:h-1/3 h-56 md:pl-1 pl-2 pb-2 pr-2 pt-1 md:delay-700 delay-700`}
         >
           <div
             className={`w-full ${animateSize ? "h-full " : "h-0"} transition-height duration-700 md:delay-[1500ms] delay-[1300ms] border border-dark dark:border-light ${inter.className} rounded-b-3xl md:rounded-bl-none flex flex-col overflow-hidden relative`}
