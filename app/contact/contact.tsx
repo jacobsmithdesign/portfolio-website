@@ -29,7 +29,7 @@ export function ContactForm() {
         <div className="w-full max-w-[38rem] mx-auto flex flex-col h-full justify-center">
           <h1 className="text-2xl font-bold mb-2">Submission complete</h1>
           <p className={`md:text-lg text-sm`}>
-            Thanks for Reaching out! I'll get in touch soon.
+            Thanks for Reaching out! I&apos;ll get in touch soon.
           </p>
           <Link href={"/"}>
             <button
