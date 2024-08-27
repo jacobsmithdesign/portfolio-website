@@ -154,7 +154,37 @@ export function HomePage({ navlinks, aboutDetails }) {
                   {aboutDetails.content}
                 </p>
                 <div>
-                  <h2 className="md:text-4xl text-2xl font-bold pb-4 text-center transition-all text-dark dark:text-light">
+                  <h2
+                    className="md:text-4xl text-2xl font-bold pb-3 text-left ml-5
+                 transition-all text-dark dark:text-light"
+                  >
+                    Education
+                  </h2>
+                  <div
+                    className={`w-full border-t border-dark dark:border-light md:pt-2 pt-2 transition-all duration-500`}
+                  ></div>
+                  <h3
+                    className="md:text-2xl text-lg font-bold pb-4 text-left ml-5
+                 transition-all text-dark dark:text-light"
+                  >
+                    Queensland University of Technology
+                  </h3>
+                  <p
+                    className="md:text-xl text-md pb-4 text-left ml-5
+                 transition-all text-dark dark:text-light mr-8"
+                  >
+                    Bachelor of Information Technology majoring in Computer
+                    Science with Distinction
+                  </p>
+                  <p
+                    className="md:text-md text-sm pb-4 text-left ml-5
+                 transition-all text-dark dark:text-secondary opacity-70"
+                  >
+                    2021 - 2024
+                  </p>
+                </div>
+                <div>
+                  <h2 className="md:text-4xl text-2xl font-bold pb-3 text-left ml-5 transition-all text-dark dark:text-light">
                     Skills
                   </h2>
                   <div
