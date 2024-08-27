@@ -134,7 +134,7 @@ export function HomePage({ navlinks, aboutDetails }) {
             className={` ${animateSize ? "md:h-full h-[30rem]" : "h-0"} md:delay-[1200ms] delay-[1200ms] md:rounded-bl-3xl border border-dark dark:border-light overflow-clip transition-height duration-700`}
           >
             <div
-              className={`w-full ${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-1000 relative justify-between flex flex-col oveflow-clip `}
+              className={`w-full ${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-1000 relative justify-between flex flex-col oveflow-clip h-full`}
             >
               <div className="flex w-full relative">
                 <div
@@ -184,7 +184,7 @@ export function HomePage({ navlinks, aboutDetails }) {
                     2021 - 2024
                   </p>
                 </div>
-                <div>
+                <div className="">
                   <h2 className="md:text-4xl text-2xl font-bold pb-3 text-left mx-5 transition-all text-dark dark:text-light">
                     Skills
                   </h2>
