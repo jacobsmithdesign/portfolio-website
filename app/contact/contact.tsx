@@ -19,7 +19,7 @@ export function ContactForm() {
     }, 500); // Adjust the timeout as needed
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [state]);
 
   if (state.succeeded) {
     return (
@@ -55,20 +55,20 @@ export function ContactForm() {
           <p className={`md:text-lg text-sm`}></p>
         </div>
         {/* Customer details box*/}
-        <div className="  md:border-l md:border-r border-t border-b border-dark dark:border-light">
+        <div className="border border-dark dark:border-light">
           <div className="flex w-full justify-between">
             <input
               id="firstName"
               name="First name"
               className={`w-1/2 border-r bg-transparent sm:text-lg text-md py-1 border-b  border-dark dark:border-light px-5 text-mahogany/80 placeholder-dark/40 dark:placeholder-light/60 md:text-lg text-sm transition-all duration-500`}
-              placeholder="Full Name"
+              placeholder="First Name*"
               required
             />
             <input
               id="lastName"
               name="Last name"
               className={`w-1/2 bg-transparent text-md sm:text-lg border-b border-dark dark:border-light px-5 text-mahogany/80 placeholder-dark/40 dark:placeholder-light/60 md:text-lg text-sm transition-all duration-500`}
-              placeholder="Last Name"
+              placeholder="Last Name*"
               required
             />
           </div>
@@ -76,7 +76,7 @@ export function ContactForm() {
             id="email"
             name="Email address"
             className={`w-full bg-transparent sm:text-lg text-md py-1 border-b border-dark dark:border-light px-5 text-mahogany/80 placeholder-dark/40 dark:placeholder-light/60 md:text-lg text-sm transition-all duration-500`}
-            placeholder="Email Address"
+            placeholder="Email Address*"
             required
           />
           <div className="flex flex-row">
@@ -92,7 +92,7 @@ export function ContactForm() {
               id="phone"
               name="Phone number"
               className={`w-full bg-transparent text-md sm:text-lg text-md py-1 px-5 text-mahogany/80  placeholder-dark/40 dark:placeholder-light/60 md:text-lg text-sm  max-h-96 min-h-20`}
-              placeholder="Enquiry"
+              placeholder="Enquiry*"
               required
             />
           </div>

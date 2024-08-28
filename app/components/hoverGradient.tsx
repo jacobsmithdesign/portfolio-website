@@ -5,19 +5,19 @@ const background = "dark";
 
 export function HoverGradient() {
   return (
-    <div className="w-full flex flex-col relative h-full group-hover:opacity-100 opacity-0 transition-all duration-200 ">
+    <div className="w-full flex flex-col relative h-full md:group-hover:opacity-100 opacity-0 transition-all duration-200 ">
       <div className="h-full relative">
         <div
-          className={`h-0 my-auto mx-auto bg-redpastel w-full group-hover:h-full transition-all duration-500 ease-out absolute bottom-0`}
+          className={`h-0 my-auto mx-auto bg-redpastel w-full md:group-hover:h-full transition-all duration-500 ease-out absolute bottom-0`}
         />
         <div
-          className={`h-0 my-auto mx-auto bg-yellowpastel w-full group-hover:h-[98%] transition-all duration-500 ease-out delay-[50ms] bottom-0 absolute`}
+          className={`h-0 my-auto mx-auto bg-yellowpastel w-full md:group-hover:h-[98%] transition-all duration-500 ease-out delay-[50ms] bottom-0 absolute`}
         />
         <div
-          className={`h-0 my-auto mx-auto bg-greenpastel w-full group-hover:h-[96%] transition-all duration-500 ease-out delay-100 bottom-0 absolute`}
+          className={`h-0 my-auto mx-auto bg-greenpastel w-full md:group-hover:h-[96%] transition-all duration-500 ease-out delay-100 bottom-0 absolute`}
         />
         <div
-          className={`h-0 my-auto mx-auto bg-gradient-to-t from-dark to-bluepastel w-full group-hover:h-[94%] transition-all duration-500 ease-out delay-150 bottom-0 absolute`}
+          className={`h-0 my-auto mx-auto bg-gradient-to-t from-dark to-bluepastel w-full md:group-hover:h-[94%] transition-all duration-500 ease-out delay-150 bottom-0 absolute`}
         />
       </div>
     </div>
@@ -26,21 +26,21 @@ export function HoverGradient() {
 
 export function HoverGradient2() {
   return (
-    <div className="w-full flex rotate-45 h-screen group-hover:opacity-100 opacity-0 transition-all duration-300">
+    <div className="w-full flex rotate-45 h-screen md:group-hover:opacity-100 opacity-0 transition-all duration-300">
       <div
-        className={`w-0 my-auto mx-auto bg-redpastel h-full group-hover:w-full transition-all  duration-700 ease-in-out left-0 absolute`}
+        className={`w-0 my-auto mx-auto bg-redpastel h-full md:group-hover:w-full transition-all  duration-700 ease-in-out left-0 absolute`}
       />
       <div
-        className={`w-0 my-auto mx-auto bg-yellowpastel h-full group-hover:w-full transition-all  duration-700 ease-in-out delay-[50ms] left-0 absolute`}
+        className={`w-0 my-auto mx-auto bg-yellowpastel h-full md:group-hover:w-full transition-all  duration-700 ease-in-out delay-[50ms] left-0 absolute`}
       />
       <div
-        className={`w-0 my-auto mx-auto bg-greenpastel h-full group-hover:w-full transition-all  duration-700 ease-in-out delay-100 left-0 absolute`}
+        className={`w-0 my-auto mx-auto bg-greenpastel h-full md:group-hover:w-full transition-all  duration-700 ease-in-out delay-100 left-0 absolute`}
       />
       <div
-        className={`w-0 my-auto mx-auto bg-bluepastel h-full group-hover:w-full transition-all  duration-700 ease-in-out delay-150 left-0 absolute`}
+        className={`w-0 my-auto mx-auto bg-bluepastel h-full md:group-hover:w-full transition-all  duration-700 ease-in-out delay-150 left-0 absolute`}
       />
       <div
-        className={`w-0 my-auto mx-auto bg-gradient-to-r from-${background} to-bluepastel h-full group-hover:w-full transition-all  duration-700 ease-in-out delay-200 left-0 absolute `}
+        className={`w-0 my-auto mx-auto bg-gradient-to-r from-${background} to-bluepastel h-full md:group-hover:w-full transition-all  duration-700 ease-in-out delay-200 left-0 absolute `}
       />
     </div>
   );

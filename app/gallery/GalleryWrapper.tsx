@@ -31,19 +31,24 @@ function GalleryComponent({ gallery, onGalleryClick }) {
   return (
     <div className="w-full">
       <div
-        className={`grid md:grid-cols-3 grid-cols-2 ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-500`}
+        className={`grid md:grid-cols-3 grid-cols-2  transition-all duration-700 delay-500`}
       >
         {gallery.map((gallery, index) => (
           <button
             key={index}
-            className={`md:h-96 h-56 border-b transition-all duration-300 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-secondary border-dark dark:border-light items-end flex relative group overflow-clip`}
+            className={`md:h-96 h-56 border-b ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-secondary border-dark dark:border-light items-end flex relative group overflow-clip`}
             onClick={() => onGalleryClick(gallery)}
+            style={{
+              transitionDelay: initialLoad
+                ? `${100 * (index + 1) + 100}ms`
+                : "0ms",
+            }}
           >
             <div
               className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700`}
               style={{
                 transitionDelay: initialLoad
-                  ? `${150 * (index + 1) + 400}ms`
+                  ? `${100 * (index + 1) + 400}ms`
                   : "0ms",
               }}
             />
@@ -51,7 +56,7 @@ function GalleryComponent({ gallery, onGalleryClick }) {
               className={`${animateContent ? "md:pb-6 pb-4 opacity-100" : "pb-0 opacity-0"} transition-all duration-700 ease-in-out md:px-4 px-2 md:text-2xl text-md text-left text-balance font-bold absolute z-20 text-light`}
               style={{
                 transitionDelay: initialLoad
-                  ? `${150 * (index + 1) + 400}ms`
+                  ? `${100 * (index + 1) + 400}ms`
                   : "0ms",
               }}
             >

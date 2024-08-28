@@ -174,8 +174,8 @@ export function HomePage({ navlinks, aboutDetails }) {
                     className="md:text-xl text-md pb-4 text-left ml-5
                  transition-all text-dark dark:text-light mr-8"
                   >
-                    Bachelor of Information Technology majoring in Computer
-                    Science with Distinction
+                    Bachelor of Information Technology, Computer Science with
+                    Distinction
                   </p>
                   <p
                     className="md:text-md text-sm pb-4 text-left ml-5

@@ -14,7 +14,7 @@ const Contact: React.FC = async () => {
           </h1>
           <HoverGradient3 />
         </div>
-        <div className="overflow-y-scroll h-full hide-scrollbar md:pb-24 pb-12 transition-all duration-500">
+        <div className="overflow-y-scroll h-full hide-scrollbar md:pb-24 pb-12 px-2 transition-all duration-500 ">
           <ContactForm />
         </div>
       </div>
