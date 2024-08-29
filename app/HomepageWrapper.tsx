@@ -127,11 +127,11 @@ export function HomePage({ navlinks, aboutDetails }) {
         </div>
         {/* About section */}
         <div
-          className={`${animateSize ? "w-full opacity-100" : "w-0 max-h-0 opacity-0"} transition-all duration-700 md:h-2/3 overflow-clip pl-2 pb-2 md:pr-1 pr-2 pt-1 ${inter.className} delay-300 md:delay-500`}
+          className={`${animateSize ? "w-full opacity-100" : "w-0 max-h-0 opacity-0"} transition-all duration-700 md:h-2/3 overflow-clip pl-2 pb-2 md:pr-1 pr-2 pt-1 ${inter.className} delay-300 md:delay-500 `}
         >
           {/* Doesnt animate height properly unless a specific height is set just for mobile. */}
           <div
-            className={` ${animateSize ? "md:h-full h-[30rem]" : "h-0"} md:delay-[1200ms] delay-[1200ms] md:rounded-bl-3xl border border-dark dark:border-light overflow-clip transition-height duration-700`}
+            className={` ${animateSize ? "md:h-full h-[35rem]" : "h-0"} md:delay-[1200ms] delay-[1200ms] md:rounded-bl-3xl border border-dark dark:border-light overflow-clip transition-height duration-700`}
           >
             <div
               className={`w-full ${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-1000 relative justify-between flex flex-col oveflow-clip h-full`}

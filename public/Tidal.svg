@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 241.00003 160" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="Tidal">
+    <path d="M160.67 39.9922L120.506 79.9967L80.3343 39.9922L120.506 0.00464109L160.67 39.9922Z" id="Path" fill="#3F3C38" stroke="none" />
+    <path d="M160.67 119.996L120.506 160L80.3343 119.996L120.506 79.9911L160.67 119.996Z" id="Path" fill="#3F3C38" stroke="none" />
+    <path d="M80.3357 39.996L40.1636 80.0005L0 39.996L40.1636 0L80.3357 39.996Z" id="Path" fill="#3F3C38" stroke="none" />
+    <path d="M241 39.996L200.836 80.0005L160.664 39.996L200.836 0L241 39.996Z" id="Path" fill="#3F3C38" stroke="none" />
+  </g>
+</svg>

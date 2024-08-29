@@ -1,7 +1,7 @@
 "use client";
 import { inter } from "../fonts/fonts";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import Arrow from "../../public/diagonal-arrow.svg";
+import Arrow from "@/public/diagonal-arrow.svg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { animate } from "framer-motion";
@@ -10,10 +10,20 @@ import customRenderers from "./customRenderers";
 import Modal from "./musicModal";
 import { HoverGradient3 } from "../components/hoverGradient";
 import GridBackground from "../ui/gridBackground";
+import Soundcloud from "@/public/Soundcloud.svg";
+import Spotify from "@/public/Spotify.svg";
+import Tidal from "@/public/Tidal.svg";
+import Link from "next/link";
 
 function MusicProject({ musicProject }) {
   const [animateContent, setAnimateContent] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
+  const [showTracks, setShowTracks] = useState(
+    new Array(musicProject.length).fill(false)
+  );
+  const [showLinks, setShowLinks] = useState(
+    new Array(musicProject.length).fill(false)
+  );
 
   useEffect(() => {
     setAnimateContent(true);
@@ -27,6 +37,21 @@ function MusicProject({ musicProject }) {
 
     return () => clearTimeout(timeout);
   }, [musicProject]);
+
+  const toggleTracklist = (index) => {
+    setShowTracks((prev) => {
+      const updatedTracks = [...prev];
+      updatedTracks[index] = !updatedTracks[index];
+      return updatedTracks;
+    });
+  };
+  const toggleLinklist = (index) => {
+    setShowLinks((prev) => {
+      const updatedTracks = [...prev];
+      updatedTracks[index] = !updatedTracks[index];
+      return updatedTracks;
+    });
+  };
 
   return (
     <div className="w-full ">
@@ -44,10 +69,32 @@ function MusicProject({ musicProject }) {
             }}
           >
             <div
-              className={`md:h-96 h-56 border-b border-r bg-secondary border-dark dark:border-light items-end flex relative group overflow-clip`}
+              className={`group md:h-96 h-56 border-b border-r bg-secondary border-dark dark:border-light flex relative group overflow-clip items-end justify-center`}
             >
+              {showLinks[index] && (
+                <div
+                  className={`flex flex-col w-full h-full z-40 absolute items-center justify-center`}
+                >
+                  {project.tidal && (
+                    <Link href={project.tidal}>
+                      <Tidal className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 border border-dark" />
+                    </Link>
+                  )}
+                  {project.spotify && (
+                    <Link href={project.spotify}>
+                      <Spotify className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 text-dark border border-dark" />
+                    </Link>
+                  )}
+                  {project.soundcloud && (
+                    <Link href={project.soundcloud}>
+                      <Soundcloud className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 text-dark border border-dark" />
+                    </Link>
+                  )}
+                </div>
+              )}
               <div
-                className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700`}
+                onClick={() => toggleLinklist(index)}
+                className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700 ${showLinks[index] ? "backdrop-blur-sm" : "backdrop-blur-none"} cursor-pointer`}
                 style={{
                   transitionDelay: initialLoad
                     ? `${150 * (index + 1) + 400}ms`
@@ -55,6 +102,12 @@ function MusicProject({ musicProject }) {
                 }}
               />
 
+              <button
+                onClick={() => toggleLinklist(index)}
+                className={`flex flex-col z-40 absolute md:text-lg text-sm bg-light text-dark p-2 border border-dark md:group-hover:opacity-100 opacity-0 transition-all md:duration-700 ease-in-out mb-2 ${showLinks[index] ? "opacity-100" : ""}`}
+              >
+                {showLinks[index] ? "Hide" : "Show"} Links
+              </button>
               <Image
                 src={project.image.url}
                 alt="background image for computer science project"
@@ -63,7 +116,7 @@ function MusicProject({ musicProject }) {
                 className="object-cover overflow-clip w-full h-full absolute opacity-60 transition-all duration-700 ease-in-out"
               />
             </div>
-            <div className="md:col-span-2 md:h-full h-56 flex flex-col relative">
+            <div className="md:col-span-2 md:h-96 h-56 flex flex-col relative">
               <h1
                 className={`md:text-4xl text-md font-bold ${animateContent ? "md:pl-4 pl-2" : "pl-0"} md:pt-4 pt-1 transition-all duration-500`}
                 style={{
@@ -74,11 +127,19 @@ function MusicProject({ musicProject }) {
               >
                 {project.title}
               </h1>
-              <div className="max-w-[36rem] mr-36">
-                <StructuredText
-                  data={project.content.value.document}
-                  customNodeRules={customRenderers}
-                />
+              <div className="max-w-[36rem] mr-36 md:block hidden">
+                <button
+                  onClick={() => toggleTracklist(index)}
+                  className={`md:text-lg text-sm ${animateContent ? "md:pl-4 pl-2" : "pl-0"} md:pt-4 pt-1 text-darkSecondary dark:text-secondary transition-all duration-500 hover:opacity-50`}
+                >
+                  {showTracks[index] ? "Hide" : "Show"} Tracklist
+                </button>
+                {showTracks[index] && (
+                  <StructuredText
+                    data={project.content.value.document}
+                    customNodeRules={customRenderers}
+                  />
+                )}
               </div>
               {/* Animated Border */}
               <div
@@ -196,7 +257,7 @@ export function Music({ music }) {
   };
 
   return (
-    <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen transition-all duration-500">
+    <div className="py-2 pr-2 md:pl-20 pl-14 flex flex-col h-screen transition-all duration-500 bg-light dark:bg-dark">
       <div className="border border-dark dark:border-light h-full relative overflow-hidden">
         <div className="w-full text-center border-b border-dark dark:border-light md:h-24 h-12 group overflow-clip transition-all duration-500">
           <h1
