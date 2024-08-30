@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { animate } from "framer-motion";
 import Link from "next/link";
+import GridBackground from "../ui/gridBackground";
 
 export function ContactForm() {
   const [state, handleSubmit] = useForm("xzzprorw");
@@ -44,7 +45,7 @@ export function ContactForm() {
   }
   return (
     <div
-      className={`mx-auto h-full overflow-y-scroll hide-scrollbar md:pt-0 ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700`}
+      className={`mx-auto w-full h-full overflow-y-scroll hide-scrollbar md:pt-0 ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700`}
     >
       <form
         onSubmit={handleSubmit}
@@ -113,6 +114,7 @@ export function ContactForm() {
           </button>
         </div>
       </form>
+      <GridBackground />
     </div>
   );
 }

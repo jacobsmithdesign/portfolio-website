@@ -332,7 +332,7 @@ export function ProjectWrapper({ compSciProject, webdevProject }) {
           </h1>
           <HoverGradient3 />
         </div>
-        <div className="overflow-y-scroll h-full hide-scrollbar md:pb-0 pb-12">
+        <div className="overflow-y-scroll h-full hide-scrollbar md:pb-24 pb-12 transition-all duration-500">
           <WebDevelopment webdevProject={webdevProject} />
           <CompterScience
             compSciProject={compSciProject}

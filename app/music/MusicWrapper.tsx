@@ -71,43 +71,14 @@ function MusicProject({ musicProject }) {
             <div
               className={`group md:h-96 h-56 border-b border-r bg-secondary border-dark dark:border-light flex relative group overflow-clip items-end justify-center`}
             >
-              {showLinks[index] && (
-                <div
-                  className={`flex flex-col w-full h-full z-40 absolute items-center justify-center`}
-                >
-                  {project.tidal && (
-                    <Link href={project.tidal}>
-                      <Tidal className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 border border-dark" />
-                    </Link>
-                  )}
-                  {project.spotify && (
-                    <Link href={project.spotify}>
-                      <Spotify className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 text-dark border border-dark" />
-                    </Link>
-                  )}
-                  {project.soundcloud && (
-                    <Link href={project.soundcloud}>
-                      <Soundcloud className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 text-dark border border-dark" />
-                    </Link>
-                  )}
-                </div>
-              )}
               <div
-                onClick={() => toggleLinklist(index)}
-                className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700 ${showLinks[index] ? "backdrop-blur-sm" : "backdrop-blur-none"} cursor-pointer`}
+                className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700`}
                 style={{
                   transitionDelay: initialLoad
                     ? `${150 * (index + 1) + 400}ms`
                     : "0ms",
                 }}
               />
-
-              <button
-                onClick={() => toggleLinklist(index)}
-                className={`flex flex-col z-40 absolute md:text-lg text-sm bg-light text-dark p-2 border border-dark md:group-hover:opacity-100 opacity-0 transition-all md:duration-700 ease-in-out mb-2 ${showLinks[index] ? "opacity-100" : ""}`}
-              >
-                {showLinks[index] ? "Hide" : "Show"} Links
-              </button>
               <Image
                 src={project.image.url}
                 alt="background image for computer science project"
@@ -127,19 +98,26 @@ function MusicProject({ musicProject }) {
               >
                 {project.title}
               </h1>
-              <div className="max-w-[36rem] mr-36 md:block hidden">
-                <button
-                  onClick={() => toggleTracklist(index)}
-                  className={`md:text-lg text-sm ${animateContent ? "md:pl-4 pl-2" : "pl-0"} md:pt-4 pt-1 text-darkSecondary dark:text-secondary transition-all duration-500 hover:opacity-50`}
+              <div className="max-w-[36rem]">
+                <div
+                  className={`flex flex-col w-full h-full z-40 absolute items-center justify-center`}
                 >
-                  {showTracks[index] ? "Hide" : "Show"} Tracklist
-                </button>
-                {showTracks[index] && (
-                  <StructuredText
-                    data={project.content.value.document}
-                    customNodeRules={customRenderers}
-                  />
-                )}
+                  {project.tidal && (
+                    <Link href={project.tidal}>
+                      <Tidal className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 border border-dark" />
+                    </Link>
+                  )}
+                  {project.spotify && (
+                    <Link href={project.spotify}>
+                      <Spotify className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 text-dark border border-dark" />
+                    </Link>
+                  )}
+                  {project.soundcloud && (
+                    <Link href={project.soundcloud}>
+                      <Soundcloud className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 text-dark border border-dark" />
+                    </Link>
+                  )}
+                </div>
               </div>
               {/* Animated Border */}
               <div
@@ -156,6 +134,111 @@ function MusicProject({ musicProject }) {
       </div>
     </div>
   );
+
+  //   Old return
+  //   return (
+  //     <div className="w-full ">
+  //     <div
+  //       className={` ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-500`}
+  //     >
+  //       {musicProject.map((project, index) => (
+  //         <div
+  //           key={index}
+  //           className={`grid md:grid-cols-3 grid-cols-2 ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700`}
+  //           style={{
+  //             transitionDelay: initialLoad
+  //               ? `${150 * (index + 1) + 400}ms`
+  //               : "0ms",
+  //           }}
+  //         >
+  //           <div
+  //             className={`group md:h-96 h-56 border-b border-r bg-secondary border-dark dark:border-light flex relative group overflow-clip items-end justify-center`}
+  //           >
+  //             {showLinks[index] && (
+  //               <div
+  //                 className={`flex flex-col w-full h-full z-40 absolute items-center justify-center`}
+  //               >
+  //                 {project.tidal && (
+  //                   <Link href={project.tidal}>
+  //                     <Tidal className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 border border-dark" />
+  //                   </Link>
+  //                 )}
+  //                 {project.spotify && (
+  //                   <Link href={project.spotify}>
+  //                     <Spotify className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 text-dark border border-dark" />
+  //                   </Link>
+  //                 )}
+  //                 {project.soundcloud && (
+  //                   <Link href={project.soundcloud}>
+  //                     <Soundcloud className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 text-dark border border-dark" />
+  //                   </Link>
+  //                 )}
+  //               </div>
+  //             )}
+  //             <div
+  //               onClick={() => toggleLinklist(index)}
+  //               className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700 ${showLinks[index] ? "backdrop-blur-sm" : "backdrop-blur-none"} cursor-pointer`}
+  //               style={{
+  //                 transitionDelay: initialLoad
+  //                   ? `${150 * (index + 1) + 400}ms`
+  //                   : "0ms",
+  //               }}
+  //             />
+
+  //             <button
+  //               onClick={() => toggleLinklist(index)}
+  //               className={`flex flex-col z-40 absolute md:text-lg text-sm bg-light text-dark p-2 border border-dark md:group-hover:opacity-100 opacity-0 transition-all md:duration-700 ease-in-out mb-2 ${showLinks[index] ? "opacity-100" : ""}`}
+  //             >
+  //               {showLinks[index] ? "Hide" : "Show"} Links
+  //             </button>
+  //             <Image
+  //               src={project.image.url}
+  //               alt="background image for computer science project"
+  //               width={400}
+  //               height={400}
+  //               className="object-cover overflow-clip w-full h-full absolute opacity-60 transition-all duration-700 ease-in-out"
+  //             />
+  //           </div>
+  //           <div className="md:col-span-2 md:h-96 h-56 flex flex-col relative">
+  //             <h1
+  //               className={`md:text-4xl text-md font-bold ${animateContent ? "md:pl-4 pl-2" : "pl-0"} md:pt-4 pt-1 transition-all duration-500`}
+  //               style={{
+  //                 transitionDelay: initialLoad
+  //                   ? `${150 * (index + 1) + 400}ms`
+  //                   : "0ms",
+  //               }}
+  //             >
+  //               {project.title}
+  //             </h1>
+  //             <div className="max-w-[36rem] mr-36 md:block hidden">
+  //               <button
+  //                 onClick={() => toggleTracklist(index)}
+  //                 className={`md:text-lg text-sm ${animateContent ? "md:pl-4 pl-2" : "pl-0"} md:pt-4 pt-1 text-darkSecondary dark:text-secondary transition-all duration-500 hover:opacity-50`}
+  //               >
+  //                 {showTracks[index] ? "Hide" : "Show"} Tracklist
+  //               </button>
+  //               {showTracks[index] && (
+  //                 <StructuredText
+  //                   data={project.content.value.document}
+  //                   customNodeRules={customRenderers}
+  //                 />
+  //               )}
+  //             </div>
+  //             {/* Animated Border */}
+  //             <div
+  //               className={`border-b border-dark dark:border-light ${animateContent ? "w-full" : "w-0"} transition-all duration-700 bottom-0 absolute`}
+  //               style={{
+  //                 transitionDelay: initialLoad
+  //                   ? `${150 * (index + 1) + 600}ms`
+  //                   : "0ms",
+  //               }}
+  //             />
+  //           </div>
+  //         </div>
+  //       ))}
+  //     </div>
+  //   </div>
+  // );
 }
 function MusicComponent({ music, onMusicClick }) {
   const [animateContent, setAnimateContent] = useState(false);
