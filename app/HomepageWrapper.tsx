@@ -150,11 +150,13 @@ export function HomePage({ navlinks, aboutDetails }) {
                 <div className="absolute w-2/3 md:h-20 rounded-br-xl bg-yellowpastel z-10 ml-4" />
                 <div className="absolute w-2/3 md:h-20 rounded-br-md bg-bluepastel ml-6" />
               </div>
-              <div className="h-full justify-between flex flex-col">
-                <p className="font-medium md:text-lg text-sm px-5 my-3 text-balance md:pt-20 pt-12 transition-all text-dark dark:text-light">
-                  {aboutDetails.content}
-                </p>
-                <div>
+              <div className="h-full flex flex-col md:mt-20 mt-12 justify-between">
+                <div className="h-full justify-center items-center flex">
+                  <p className=" w-fullfont-medium md:text-lg text-sm px-5 my-auto text-balance transition-all text-dark dark:text-light">
+                    {aboutDetails.content}
+                  </p>
+                </div>
+                <div className="h-full">
                   <h2
                     className="md:text-4xl text-2xl font-bold pb-3 text-left ml-5
                  transition-all text-dark dark:text-light"
