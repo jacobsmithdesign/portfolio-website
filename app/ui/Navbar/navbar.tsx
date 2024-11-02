@@ -48,7 +48,7 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
       >
         <Link
           href="/"
-          data-flare="Return Home"
+          data-flare="Home"
           className={`md:min-h-16 min-h-10 text-light dark:text-dark group items-center flex flex-row`}
         >
           <div className="w-full h-full bg-accent md:group-hover:rounded-sm md:group-hover:scale-90 transition-all duration-50 ease-out" />
@@ -57,7 +57,7 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
           <Link
             href={link.href}
             key={index}
-            data-flare={"Go to " + link.title}
+            data-flare=" "
             onClick={() => {
               setSelectedRoute(index);
             }}
