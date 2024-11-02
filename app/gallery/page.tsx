@@ -1,3 +1,4 @@
+import FlareCursor from "../components/FlareCursor";
 import { inter } from "../fonts/fonts";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { fetchGallery } from "../lib/fetchData";

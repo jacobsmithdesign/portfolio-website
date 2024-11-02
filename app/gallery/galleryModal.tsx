@@ -22,6 +22,7 @@ function Modal({ children, isOpen, onClose }) {
         className={`relative ${!closeAnimation ? "w-0" : "w-full"} overflow-y-hidden bg-light/80 dark:bg-dark/80 backdrop-blur my-2 border border-dark dark:border-light transition-all duration-300 min-h-0 ease-out`}
       >
         <button
+          data-flare=" "
           className={`absolute md:top-8 top-4 md:right-8 right-4 md:w-8 md:h-8 h-4 w-4 text-dark dark:text-light hover:scale-90 transition-all duration-100 ${!closeAnimation ? "opacity-0" : "opacity-100"}`}
           onClick={handleClose}
         >

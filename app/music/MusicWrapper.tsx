@@ -103,17 +103,20 @@ function MusicProject({ musicProject }) {
                   className={`flex flex-col w-full h-full z-40 absolute items-center justify-center`}
                 >
                   {project.tidal && (
-                    <Link href={project.tidal}>
+                    <Link href={project.tidal} data-flare="Listen on Tidal">
                       <Tidal className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 border border-dark" />
                     </Link>
                   )}
                   {project.spotify && (
-                    <Link href={project.spotify}>
+                    <Link href={project.spotify} data-flare="Listen on Spotify">
                       <Spotify className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 text-dark border border-dark" />
                     </Link>
                   )}
                   {project.soundcloud && (
-                    <Link href={project.soundcloud}>
+                    <Link
+                      href={project.soundcloud}
+                      data-flare="Listen on Soundcloud"
+                    >
                       <Soundcloud className="md:w-20 md:h-20 w-12 h-12 bg-light mb-4 p-2 text-dark border border-dark" />
                     </Link>
                   )}

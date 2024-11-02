@@ -6,6 +6,15 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  cursor: none;
+}
+body,
+a,
+button,
+input,
+textarea,
+select {
+  cursor: none !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,6 +40,20 @@ html {
   .text-balance {
     text-wrap: balance;
   }
+}
+.flare {
+  width: 2rem;
+  max-width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  transition:
+    max-width 0.25s ease-in-out,
+    height 0.15s ease-out,
+    background-color 0.15s ease-out,
+    border-color 0.1s ease-out;
+}
+.flare.expanded {
+  max-width: 100%; /* Allow it to expand with text */
 }
 /* Hover grid container */
 #container {

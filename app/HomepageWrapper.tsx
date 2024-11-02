@@ -87,8 +87,9 @@ export function HomePage({ navlinks, aboutDetails }) {
         <div
           className={`${animateSize ? "w-full" : "w-0"} md:h-1/3 h-1/6 pl-2 pt-2 md:pr-1 pr-2 pb-1 transition-all duration-700 overflow-clip`}
         >
-          <div
-            className={`${animateSize ? "md:h-full h-28" : "h-0"} transition-height md:rounded-tr-none rounded-t-3xl duration-700 w-full border border-dark dark:border-light ${inter.className} font-extrabold relative flex overflow-clip group cursor-pointer`}
+          <button
+            data-flare="Light Mode/ Dark Mode"
+            className={`${animateSize ? "md:h-full h-28" : "h-0"} transition-height duration-700 w-full border border-dark dark:border-light ${inter.className} font-extrabold relative flex overflow-clip group z-[55]`}
             onClick={() => {
               toggleThemeHandler();
             }}
@@ -123,7 +124,7 @@ export function HomePage({ navlinks, aboutDetails }) {
             <div className="w-full absolute opacity-50 h-full">
               <ColourfulWaves />
             </div>
-          </div>
+          </button>
         </div>
         {/* About section */}
         <div
@@ -131,7 +132,7 @@ export function HomePage({ navlinks, aboutDetails }) {
         >
           {/* Doesnt animate height properly unless a specific height is set just for mobile. */}
           <div
-            className={` ${animateSize ? "md:h-full h-[35rem]" : "h-0"} md:delay-[1200ms] delay-[1200ms] md:rounded-bl-3xl border border-dark dark:border-light overflow-clip transition-height duration-700`}
+            className={` ${animateSize ? "md:h-full h-[35rem]" : "h-0"} md:delay-[1200ms] delay-[1200ms] border border-dark dark:border-light overflow-clip transition-height duration-700`}
           >
             <div
               className={`w-full ${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-1000 relative justify-between flex flex-col oveflow-clip h-full`}
@@ -210,7 +211,7 @@ export function HomePage({ navlinks, aboutDetails }) {
           className={`${animateSize ? "w-full opacity-100" : "w-0 opacity-0"} transition-all duration-700 md:h-2/3 h-full md:pl-1 pl-2 pb-1 pr-2 md:pt-2 md:delay-300 delay-500`}
         >
           <div
-            className={`${animateSize ? "md:h-full h-96" : "h-0"} md:rounded-tr-3xl transition-height duration-700 delay-[1000ms] border border-dark dark:border-light relative justify-between flex flex-col overflow-hidden`}
+            className={`${animateSize ? "md:h-full h-96" : "h-0"} transition-height duration-700 delay-[1000ms] border border-dark dark:border-light relative justify-between flex flex-col overflow-hidden`}
           >
             <div
               className={`${showContent ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-700  h-full absolute w-full overflow-y-clip`}
@@ -234,6 +235,7 @@ export function HomePage({ navlinks, aboutDetails }) {
                   <Link
                     href={link.href}
                     key={index}
+                    data-flare={"Go to " + link.title}
                     className={`w-full h-1/6  text-center flex items-center justify-center overflow-clip group border-t border-b border-dark dark:border-light my-2 duration-500 z-20 bg-light dark:bg-dark`}
                   >
                     <h1
@@ -252,7 +254,7 @@ export function HomePage({ navlinks, aboutDetails }) {
           className={`${animateSize ? "w-full opacity-100" : "w-0 opacity-0"} transition-all duration-700 md:h-1/3 h-56 md:pl-1 pl-2 pb-2 pr-2 pt-1 md:delay-700 delay-700`}
         >
           <div
-            className={`w-full ${animateSize ? "h-full " : "h-0"} transition-height duration-700 md:delay-[1500ms] delay-[1300ms] border border-dark dark:border-light ${inter.className} rounded-b-3xl md:rounded-bl-none flex flex-col overflow-hidden relative`}
+            className={`w-full ${animateSize ? "h-full " : "h-0"} transition-height duration-700 md:delay-[1500ms] delay-[1300ms] border border-dark dark:border-light ${inter.className} flex flex-col overflow-hidden relative`}
           >
             <div className="flex w-full md:h-20 h-12">
               <div
@@ -270,6 +272,7 @@ export function HomePage({ navlinks, aboutDetails }) {
             </div>
             <Link
               href="/contact"
+              data-flare=" "
               className={`overflow-clip flex text-center items-center md:h-16 h-12 justify-center border-t border-b border-dark dark:border-light group relative bg-light dark:bg-dark md:hover:bg-accent transition-all duration-500 my-auto z-20`}
             >
               <h1

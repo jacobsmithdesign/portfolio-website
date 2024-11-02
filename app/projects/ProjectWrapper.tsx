@@ -65,10 +65,10 @@ function WebDevelopment({ webdevProject }) {
                 : "0ms",
             }}
           >
-            <button key={index}>
+            <button key={index} data-flare={"Visit " + project.title}>
               <a
                 href={project.url}
-                className={`md:h-96 h-56 border-b border-r bg-secondary border-dark dark:border-light items-end flex relative group overflow-clip`}
+                className={`md:h-96 h-56 border-b border-r bg-secondary dark:bg-dark/30 border-dark dark:border-light items-end flex relative group overflow-clip`}
               >
                 <div
                   className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700`}
@@ -79,7 +79,7 @@ function WebDevelopment({ webdevProject }) {
                   }}
                 />
                 <h2
-                  className={`${animateContent ? "pb-6 opacity-100" : "pb-0 opacity-0"} transition-all duration-700 ease-in-out pl-4 md:text-2xl text-md text-left text-balance font-bold absolute z-20 md:group-hover:text-${background}`}
+                  className={`${animateContent ? "pb-6 opacity-100" : "pb-0 opacity-0"} transition-all duration-700 ease-in-out pl-4 md:text-2xl text-md text-left text-balance font-bold absolute z-20 md:group-hover:text-dark dark:md:group-hover:text-light`}
                   style={{
                     transitionDelay: initialLoad
                       ? `${150 * (index + 1) + 400}ms`
@@ -89,11 +89,10 @@ function WebDevelopment({ webdevProject }) {
                   Visit website
                 </h2>
                 <Arrow
-                  className={`md:h-16 h-10 text-dark dark:text-light md:group-hover:text-${background} top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
+                  className={`md:h-16 h-10 text-dark dark:text-light  top-0 right-0 absolute mt-2 mr-2 md:group-hover:mt-0 md:group-hover:mr-0 transition-all duration-300 ease-in-out z-20`}
                 />
-                <div
-                  className={`md:group-hover:opacity-100 opacity-0 transition-all duration-300 bg-gradient-to-t from-${background} to-transparent absolute w-full h-full`}
-                />
+                <div className="absolute w-full h-2/5 bg-gradient-to-t from-light to-transparent dark:from-dark md:group-hover:opacity-80 opacity-0 transition-all duration-700 ease-in-out z-10" />
+                <CornerGradient className="w-40 h-40 text-light dark:text-dark absolute right-0 top-0 z-10 opacity-0 md:group-hover:opacity-100 transition-all duration-700 translate-x-6 -translate-y-6" />
                 <Image
                   src={project.image.url}
                   alt="background image for computer science project"
@@ -215,6 +214,7 @@ function CompterScience({ compSciProject, onProjectClick }) {
         {compSciProject.map((project, index) => (
           <button
             key={index}
+            data-flare="Read Article"
             className={`md:h-96 h-56 border-b transition-all duration-300 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-light dark:bg-dark border-dark dark:border-light items-end flex relative group overflow-clip group`}
             onClick={() => onProjectClick(project)}
           >
@@ -243,7 +243,7 @@ function CompterScience({ compSciProject, onProjectClick }) {
               className={`md:group-hover:opacity-100 opacity-0 transition-all duration-300 bg-gradient-to-t from-light dark:from-dark to-transparent absolute w-full h-full`}
             />
             <div className="absolute w-full h-2/5 bg-gradient-to-t from-light to-transparent dark:from-dark md:group-hover:opacity-80 opacity-0 transition-all duration-700 ease-in-out z-10" />
-            <CornerGradient className="w-40 h-40 text-light dark:text-dark absolute right-0 top-0 z-10 opacity-0 md:group-hover:opacity-50 transition-all duration-700 translate-x-6 -translate-y-6" />
+            <CornerGradient className="w-40 h-40 text-light dark:text-dark absolute right-0 top-0 z-10 opacity-0 md:group-hover:opacity-100 transition-all duration-700 translate-x-6 -translate-y-6" />
             <Image
               src={project.image.url}
               alt="background image for computer science project"

@@ -24,6 +24,7 @@ function Modal({ children, isOpen, onClose }) {
       >
         <div className="fixed w-full md:h-24 h-12 bg-light dark:bg-dark border-b border-dark dark:border-light transition-all duration-300 z-10">
           <button
+            data-flare=" "
             className={`fixed md:top-8 top-4 md:right-8 right-4 md:w-8 md:h-8 h-4 w-4 text-dark dark:text-light hover:scale-90 transition-all duration-100 ${!closeAnimation ? "opacity-0" : "opacity-100"} `}
             onClick={handleClose}
           >

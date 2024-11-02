@@ -29,7 +29,7 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
       // Hide navbar on the home page
       setShowNavbarLinks(false);
       setShowContact(false);
-      setTimeout(() => setShowNavbar(false), 500);
+      setTimeout(() => setShowNavbar(false), 0);
     } else {
       setShowNavbar(true);
       setTimeout(() => setShowNavbarLinks(true), 500);
@@ -48,6 +48,7 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
       >
         <Link
           href="/"
+          data-flare="Return Home"
           className={`md:min-h-16 min-h-10 text-light dark:text-dark group items-center flex flex-row`}
         >
           <div className="w-full h-full bg-accent md:group-hover:rounded-sm md:group-hover:scale-90 transition-all duration-50 ease-out" />
@@ -56,6 +57,7 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
           <Link
             href={link.href}
             key={index}
+            data-flare={"Go to " + link.title}
             onClick={() => {
               setSelectedRoute(index);
             }}

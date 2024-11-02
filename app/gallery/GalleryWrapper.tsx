@@ -36,6 +36,7 @@ function GalleryComponent({ gallery, onGalleryClick }) {
         {gallery.map((gallery, index) => (
           <button
             key={index}
+            data-flare="Enlarge"
             className={`md:h-96 h-56 border-b ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700 ${index % 2 == 0 ? "md:border-r-0 border-r" : ""} ${index != 0 ? "md:border-l" : ""} bg-secondary border-dark dark:border-light items-end flex relative group overflow-clip`}
             onClick={() => onGalleryClick(gallery)}
             style={{
