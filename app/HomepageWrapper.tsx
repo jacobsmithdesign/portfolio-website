@@ -1,27 +1,14 @@
 "use client";
-import Image from "next/image";
-import {
-  garamond,
-  inter,
-  neonTube,
-  poppins,
-  serifDisplay,
-  title,
-  vt323,
-} from "./fonts/fonts";
+import { inter, title } from "./fonts/fonts";
 import Link from "next/link";
-import { fetchNavbarlinks, fetchAbout } from "./lib/fetchData";
 import { IconCarousel } from "./ui/iconCarousel";
-import { HoverGradient, HoverGradient2 } from "./components/hoverGradient";
+import { HoverGradient2 } from "./components/hoverGradient";
 import Waves1 from "../public/waves1.svg";
 import Waves2 from "../public/waves2.svg";
 import Waves3 from "../public/waves3.svg";
 import Waves4 from "../public/waves4.svg";
-import Angle from "../public/angle.svg";
 import { useContext, useEffect, useState } from "react";
-import { animate } from "framer-motion";
 import MyThemeContext from "./context/themeContext";
-import GridBackground from "./ui/gridBackground";
 
 function ColourfulWaves() {
   return (

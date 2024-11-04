@@ -86,6 +86,9 @@ function FlareCursor() {
             ? "max-w-full h-8 rounded-2xl min-w-8 mx-auto"
             : "min-w-8 h-8 w-8 rounded-none max-w-8"
         } border items-center border-dark dark:border-light px-2 py-1 transition-all relative whitespace-nowrap`}
+        style={{
+          maxWidth: hoverText ? "100%" : "2rem",
+        }}
       >
         <div
           className={`${hoverText ? "opacity-100 delay-150" : "opacity-0"} w-full transition-all duration-150 dark:text-light`}

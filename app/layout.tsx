@@ -4,15 +4,14 @@ import "./globals.css";
 import NavbarWrapper from "./ui/Navbar/navbarWrapper";
 import { PageTransitionProvider } from "./context/PageTransitionContext";
 import AnimateLayout from "./components/General/AnimateLayout";
-import { fetchNavbarlinks } from "./lib/fetchData";
-import MyThemeContext, { MyThemeContextProvider } from "./context/themeContext";
+import { MyThemeContextProvider } from "./context/themeContext";
 import FlareCursor from "./components/FlareCursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Jacob Smith Design",
-  description: "Jacob Smith web design and developmenmt",
+  description: "Jacob Smith web design and development",
 };
 
 export default function RootLayout({
