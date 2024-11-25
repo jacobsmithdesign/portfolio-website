@@ -10,6 +10,8 @@ import customRenderers from "./customRenderers";
 import Modal from "./blogModal";
 import { HoverGradient3 } from "../components/hoverGradient";
 
+// This is the blog component that shows up as a small square on the main Projects page
+
 function BlogComponent({ blog, onBlogClick }) {
   const [animateContent, setAnimateContent] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
@@ -77,6 +79,7 @@ function BlogComponent({ blog, onBlogClick }) {
   );
 }
 
+// This is the enlarged blog that exists within a modal
 function EnlargedBlog({ blogDetails }) {
   if (!blogDetails) return null;
 
