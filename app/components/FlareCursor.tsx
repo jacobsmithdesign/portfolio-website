@@ -73,7 +73,7 @@ function FlareCursor() {
 
   return (
     <div
-      className="fixed z-[60] pointer-events-none"
+      className="fixed z-[60] pointer-events-none md:block hidden"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
