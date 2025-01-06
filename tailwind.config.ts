@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+const plugin = require("tailwindcss/plugin");
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -98,6 +98,16 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".backdrop-blur-fix": {
+          "-webkit-backdrop-filter": "blur(12px)",
+          "backdrop-filter": "blur(12px)",
+          "background-color": "rgba(255, 255, 255, 0.4)", // Ensure transparency
+        },
+      });
+    }),
+  ],
 };
 export default config;

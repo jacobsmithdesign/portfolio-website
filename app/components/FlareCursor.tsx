@@ -10,6 +10,12 @@ function FlareCursor() {
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [hoverText, setHoverText] = useState<string | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
+
+  // Check if the device is a touch screen
+  useEffect(() => {
+    setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
 
   const handleMouseMove = (e: MouseEvent) => {
     setPosition({ x: e.clientX, y: e.clientY });
@@ -55,6 +61,7 @@ function FlareCursor() {
   };
 
   useEffect(() => {
+    if (isTouchDevice) return;
     window.addEventListener("mousemove", handleMouseMove);
 
     updateFlareElements();
@@ -69,14 +76,15 @@ function FlareCursor() {
       window.removeEventListener("mousemove", handleMouseMove);
       observer.disconnect();
     };
-  }, []);
-
+  }, [isTouchDevice]);
+  if (isTouchDevice) return null;
   return (
     <div
       className="fixed z-[60] pointer-events-none md:block hidden"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
+        WebkitBackdropFilter: "blur(12px)",
         transform: "translate(-50%, -50%)", // Center the element based on its width and height
       }}
     >

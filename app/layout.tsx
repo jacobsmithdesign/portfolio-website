@@ -24,7 +24,8 @@ export default function RootLayout({
       <MyThemeContextProvider>
         <body className={`${inter.className} text-dark cursor-none`}>
           <FlareCursor />
-          <div className="grain absolute" />
+          {/* Grain filter. Disabling improves performance and visual clarity but I do like the way it looks */}
+          {/* <div className="grain absolute" /> */}
           <PageTransitionProvider>
             <div className="absolute z-50 ml-2">
               <NavbarWrapper />
