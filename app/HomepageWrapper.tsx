@@ -12,7 +12,7 @@ import MyThemeContext from "./context/themeContext";
 
 function ColourfulWaves() {
   return (
-    <div className="w-screen h-full absolute overflow-clip pt-36 z-0">
+    <div className="w-screen bottom-0 md:h-1/2 h-full absolute overflow-hidden z-0">
       <div className="wave-container wave-container-right slow-right items-end z-30 mt-8">
         <Waves1 />
         <Waves1 />
@@ -85,7 +85,7 @@ export function HomePage({ navlinks, aboutDetails }) {
               className={`md:w-0 md:border-r-0 border-r border-dark dark:border-light w-11 transition-all duration-500 z-20 `}
             />
             <div
-              className={`flex flex-col w-full h-full justify-end items-start md:px-4 px-1 transition-all duration-700 z-20 ${showContent ? "opacity-100" : "opacity-0"} delay-300`}
+              className={`flex flex-col w-full h-full justify-end items-start md:px-4 px-1 transition-all duration-700 z-20 absolute ${showContent ? "opacity-100" : "opacity-0"} delay-300 ml-10 md:ml-0`}
             >
               <h1
                 className={` md:text-lg sm:text-sm text-xs transition-all duration-500 text-dark dark:text-light`}
@@ -108,7 +108,7 @@ export function HomePage({ navlinks, aboutDetails }) {
               className={`w-full h-full absolute backdrop-blur-3xl z-10 opacity-100 md:group-hover:bg-dark/20 dark:md:group-hover:bg-light/10 transition-all duration-100`}
             />
             {/* colourful waves */}
-            <div className="w-full absolute opacity-50 h-full">
+            <div className="w-full opacity-50 h-full">
               <ColourfulWaves />
             </div>
           </button>
