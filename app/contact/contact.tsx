@@ -24,9 +24,7 @@ export function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <div
-        className={`mx-auto h-full overflow-y-scroll hide-scrollbar md:pt-0 transition-all duration-700`}
-      >
+      <div className={`mx-auto h-full w-full`}>
         <div className="w-full max-w-[38rem] mx-auto flex flex-col h-full justify-center">
           <h1 className="text-2xl font-bold mb-2">Submission complete</h1>
           <p className={`md:text-lg text-sm`}>
@@ -44,12 +42,13 @@ export function ContactForm() {
     );
   }
   return (
-    <div
-      className={`w-full md:pt-0 ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700`}
-    >
+    <div className={`w-full`}>
+      <h1 className="md:text-2xl text-xl font-bold mb-2 text-dark dark:text-light">
+        Make an enquiry
+      </h1>
       <form
         onSubmit={handleSubmit}
-        className="w-full  mx-auto flex flex-col h-full justify-center "
+        className="w-full mx-auto flex flex-col h-full justify-center "
       >
         <div className="w-full justify-between flex items-center"></div>
         {/* Customer details box*/}
