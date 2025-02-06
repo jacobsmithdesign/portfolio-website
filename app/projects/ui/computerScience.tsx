@@ -12,12 +12,9 @@ export default function ComupterScience({ compSciProject, onProjectClick }) {
   useEffect(() => {
     setAnimateContent(true);
 
-    const timeout = setTimeout(
-      () => {
-        setInitialLoad(false);
-      },
-      compSciProject.length * 300 + 1000
-    ); // Adjust the timeout as needed
+    const timeout = setTimeout(() => {
+      setInitialLoad(false);
+    }, 1300); // Adjust the timeout as needed
 
     return () => clearTimeout(timeout);
   }, [compSciProject]);
@@ -26,7 +23,7 @@ export default function ComupterScience({ compSciProject, onProjectClick }) {
     <div className="w-full text-dark dark:text-light ">
       <div className="w-full h-full relative flex">
         <h2
-          className={`${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-500 md:text-4xl text-2xl md:pl-8 pl-4 md:py-8 py-4 z-20 h-full delay-700 pointer-events-none`}
+          className={`${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-00 md:text-4xl text-2xl md:pl-8 pl-4 md:py-8 py-4 z-20 h-full delay-700 pointer-events-none`}
         >
           Computer Science
         </h2>

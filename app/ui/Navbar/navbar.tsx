@@ -57,7 +57,7 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
           <Link
             href={link.href}
             key={index}
-            data-flare=" "
+            data-flare={`${link.title}`}
             onClick={() => {
               setSelectedRoute(index);
             }}
@@ -77,6 +77,7 @@ export const Navbar: React.FC<{ navlinks: any }> = ({ navlinks }) => {
         ))}
         <Link
           href="/contact"
+          data-flare="Contact"
           className={`md:w-16 w-10 z-50 flex flex-col ${showContact ? "opacity-100" : "opacity-0"} transition-all duration-700 ease-in-out overflow-clip border h-1/4 mt-2 border-dark cursor-pointer bg-dark dark:bg-light group`}
         >
           <h1

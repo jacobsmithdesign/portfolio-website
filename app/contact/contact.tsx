@@ -45,18 +45,15 @@ export function ContactForm() {
   }
   return (
     <div
-      className={`mx-auto w-full h-full overflow-y-scroll hide-scrollbar md:pt-0 ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700`}
+      className={`w-full md:pt-0 ${animateContent ? "opacity-100" : "opacity-0"} transition-all duration-700`}
     >
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-[38rem] mx-auto flex flex-col h-full justify-center"
+        className="w-full  mx-auto flex flex-col h-full justify-center "
       >
-        <div className="w-full justify-between flex items-center">
-          <h1 className="text-2xl font-bold mb-2">Make an enquiry</h1>
-          <p className={`md:text-lg text-sm`}></p>
-        </div>
+        <div className="w-full justify-between flex items-center"></div>
         {/* Customer details box*/}
-        <div className="border border-dark dark:border-light">
+        <div className="border border-dark dark:border-light bg-dark">
           <div className="flex w-full justify-between">
             <input
               data-flare=" "
@@ -109,18 +106,15 @@ export function ContactForm() {
           field="message"
           errors={state.errors}
         />
-        <div className="flex justify-between">
-          <button
-            type="submit"
-            data-flare=" "
-            disabled={state.submitting}
-            className={`w-24 text-lg md:hover:text-pollen text-raw-silk text-center mt-2 mb-8 md:hover:bg-raw-silk bg-yellowpastel dark:bg-bluepastel md:hover:bg-greenpastel border border-dark dark:border-light transition-all font-bold`}
-          >
-            submit
-          </button>
-        </div>
+        <button
+          type="submit"
+          data-flare=" "
+          disabled={state.submitting}
+          className={`w-24 text-lg md:hover:text-pollen text-raw-silk text-center mt-2 md:hover:bg-raw-silk bg-yellowpastel dark:bg-bluepastel md:hover:bg-greenpastel border border-dark dark:border-light transition-all font-bold`}
+        >
+          submit
+        </button>
       </form>
-      <GridBackground />
     </div>
   );
 }

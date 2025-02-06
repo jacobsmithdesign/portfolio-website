@@ -222,7 +222,7 @@ export function HomePage({ navlinks, aboutDetails }) {
                   <Link
                     href={link.href}
                     key={index}
-                    data-flare=" "
+                    data-flare={`View ${link.title}`}
                     className={`w-full h-1/6 text-center flex items-center justify-center overflow-hidden group border-t border-b border-dark dark:border-light my-2 duration-500 z-20 bg-light dark:bg-dark`}
                   >
                     <h1
