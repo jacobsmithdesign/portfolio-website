@@ -44,7 +44,6 @@ const GridBackground: React.FC = () => {
       key={index}
       className="w-full h-full relative "
       onMouseEnter={(e) => {
-        console.log("entered");
         (e.target as HTMLDivElement).style.transition = "0.02s ease";
         (e.target as HTMLDivElement).style.backgroundColor = getRandomColor();
       }}

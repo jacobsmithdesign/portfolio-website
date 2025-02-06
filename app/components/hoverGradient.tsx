@@ -28,7 +28,7 @@ export function HoverGradient2() {
   return (
     <div className="w-full flex rotate-45 h-screen md:group-hover:opacity-100 opacity-0 transition-all duration-300">
       <div
-        className={`w-0 my-auto mx-auto bg-redpastel h-full md:group-hover:w-full transition-all  duration-700 ease-in-out left-0 absolute`}
+        className={` w-0 my-auto mx-auto bg-redpastel h-full md:group-hover:w-full transition-all  duration-700 ease-in-out left-0 absolute`}
       />
       <div
         className={`w-0 my-auto mx-auto bg-yellowpastel h-full md:group-hover:w-full transition-all  duration-700 ease-in-out delay-[50ms] left-0 absolute`}

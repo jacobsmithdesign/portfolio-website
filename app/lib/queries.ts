@@ -37,6 +37,11 @@ export const WEBDEV_QUERY = `
     content {value}
     image {url}
     url
+    react
+    typescript
+    nextjs
+    tailwindcss
+    datocms
   }
 }
 `;

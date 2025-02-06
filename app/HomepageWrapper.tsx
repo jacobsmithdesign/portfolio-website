@@ -223,7 +223,7 @@ export function HomePage({ navlinks, aboutDetails }) {
                     href={link.href}
                     key={index}
                     data-flare=" "
-                    className={`w-full h-1/6  text-center flex items-center justify-center overflow-clip group border-t border-b border-dark dark:border-light my-2 duration-500 z-20 bg-light dark:bg-dark`}
+                    className={`w-full h-1/6 text-center flex items-center justify-center overflow-hidden group border-t border-b border-dark dark:border-light my-2 duration-500 z-20 bg-light dark:bg-dark`}
                   >
                     <h1
                       className={`${inter.className} md:group-hover:text-light dark:text-light text-dark transition-all duration-500 font-bold italic md:text-4xl text-2xl w-full pl-4 text-left absolute z-20`}

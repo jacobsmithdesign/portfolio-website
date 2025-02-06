@@ -11,7 +11,6 @@ function Modal({ children, isOpen, onClose }) {
   if (!isOpen) return null;
   const handleClose = () => {
     setCloseAnimation(false);
-    console.log(children.props.projectDetails.title);
     setTimeout(onClose, 600);
   };
 
