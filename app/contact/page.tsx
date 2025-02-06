@@ -48,7 +48,7 @@ export default function Contact() {
             <a
               href="tel:61406153960"
               data-flare="Call me"
-              className="flex border border-t-0 p-1 pl-5 md:hover:text-bluepastel text-dark dark:text-light mb-10"
+              className="flex border border-t-0 border-dark dark:border-light p-1 pl-5 md:hover:text-bluepastel text-dark dark:text-light mb-10"
             >
               <h1 className="md:text-2xl text-xl font-bold  transition-all duration-300">
                 +61 406 153 960

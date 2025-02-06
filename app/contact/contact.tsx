@@ -52,7 +52,7 @@ export function ContactForm() {
       >
         <div className="w-full justify-between flex items-center"></div>
         {/* Customer details box*/}
-        <div className="border border-dark dark:border-light bg-dark">
+        <div className="border border-dark dark:border-light dark:bg-dark bg-light">
           <div className="flex w-full justify-between">
             <input
               data-flare=" "

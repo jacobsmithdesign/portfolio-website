@@ -47,7 +47,7 @@ export default function WebDevelopment({ webdevProject }) {
               key={index}
               href={project.url}
               data-flare={"Visit " + project.title}
-              className={`md:h-96 h-56 border-b border-r bg-secondary dark:bg-dark/30 border-dark dark:border-light items-end flex relative group overflow-clip`}
+              className={`md:h-96 h-56 border-b border-r bg-secondary dark:bg-dark border-dark dark:border-light items-end flex relative group overflow-clip`}
             >
               <div
                 className={`w-full h-full z-30 ${animateContent ? "backdrop-blur-none" : "backdrop-blur-xl"} transition-all duration-700 `}
